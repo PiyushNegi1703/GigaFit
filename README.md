@@ -9,4 +9,4 @@ Project Created by Piyush Singh Negi
 5. Express JS first route - PR link - https://github.com/kalviumcommunity/GigaFit/pull/3/commits/226e06095b5c42c08376fb87d695251348c66dfc
 6. Middleware - PR link - https://github.com/kalviumcommunity/GigaFit/pull/3/commits/226e06095b5c42c08376fb87d695251348c66dfc
 7. Use of public folder to serve files - PR link - https://github.com/kalviumcommunity/GigaFit/pull/3/commits/226e06095b5c42c08376fb87d695251348c66dfc
-8. Application components created - PR link -
+8. Application components created - PR link - https://github.com/kalviumcommunity/GigaFit/pull/4/commits/83b41407d79edf370c34c60a58ed6735ddeb63c8
