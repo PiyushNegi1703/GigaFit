@@ -18,13 +18,13 @@ PR #4
 8. Application components created - PR link - https://github.com/kalviumcommunity/GigaFit/pull/4/commits/83b41407d79edf370c34c60a58ed6735ddeb63c8
 
 PR#5
-9. ExpressJS - additional routes
-10. Mongoose
-11. CRUD Operations
-12. Simple API - CRUD Operations using NodeJs
-13. Schemas and Models
+9. ExpressJS - additional routes - PR link - https://github.com/kalviumcommunity/GigaFit/pull/5/commits/7880ee8987bf65e01e22fefee3648638c4a3f3c4
+10. Mongoose - PR link - https://github.com/kalviumcommunity/GigaFit/pull/5/commits/7880ee8987bf65e01e22fefee3648638c4a3f3c4
+11. CRUD Operations - PR link - https://github.com/kalviumcommunity/GigaFit/pull/5/commits/7880ee8987bf65e01e22fefee3648638c4a3f3c4
+12. Simple API - CRUD Operations using NodeJs - PR link - https://github.com/kalviumcommunity/GigaFit/pull/5/commits/7880ee8987bf65e01e22fefee3648638c4a3f3c4
+13. Schemas and Models - PR link - https://github.com/kalviumcommunity/GigaFit/pull/5/commits/7880ee8987bf65e01e22fefee3648638c4a3f3c4
 
 Other libraries used -
 1. dotenv - PR link - https://github.com/kalviumcommunity/GigaFit/pull/3/commits/226e06095b5c42c08376fb87d695251348c66dfc
 2. react-icons - PR link - https://github.com/kalviumcommunity/GigaFit/pull/4/commits/83b41407d79edf370c34c60a58ed6735ddeb63c8
-3. bcrypt
+3. bcrypt - PR link - https://github.com/kalviumcommunity/GigaFit/pull/5/commits/7880ee8987bf65e01e22fefee3648638c4a3f3c4
