@@ -1,7 +1,7 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import backgroundImage from '../assets/login 1.png'
-import logo from '../assets/logo.png'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import backgroundImage from '../assets/login 1.png';
+import logo from '../assets/logo.png';
 
 const LandingPage = () => {
   return (
@@ -25,4 +25,4 @@ const LandingPage = () => {
   )
 }
 
-export default LandingPage
+export default LandingPage;

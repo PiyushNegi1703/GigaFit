@@ -1,6 +1,8 @@
-import React from 'react'
-import image from '../assets/legs.png'
-import { FcGoogle } from 'react-icons/fc'
+import React from 'react';
+// Image imported from assets
+import image from '../assets/legs.png';
+// Google icon imported from react-icons
+import { FcGoogle } from 'react-icons/fc';
 
 const LoginPage = () => {
   return (
@@ -27,4 +29,4 @@ const LoginPage = () => {
   )
 }
 
-export default LoginPage
+export default LoginPage;

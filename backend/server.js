@@ -1,25 +1,41 @@
 // Importing .env
-require('dotenv').config()
+require('dotenv').config();
+
 // Importing Express
-const express = require('express')
+const express = require('express');
 // Importing workout routes
-const workoutRoutes = require('./routes/workout')
+const workoutRoutes = require('./routes/workout');
+// Importing mongoose
+const mongoose = require('mongoose');
 
 
 // Express App
-const app = express()
+const app = express();
+
+// Creating a default port
+const port = process.env.PORT || 900;
 
 // Middleware
-app.use(express.json())
+app.use(express.json());
+
 app.use((req, resp, next) => {
-    console.log(req.path, req.method)
-    next()
+    console.log(req.path, req.method);
+    next();
 })
 
 // Routes
-app.use('/api/workouts', workoutRoutes)
+app.use('/api/workouts', workoutRoutes);
+
+// Setting strictQuery to false to prevent error
+mongoose.set('strictQuery', false);
 
 // Listening for requests
-app.listen(process.env.PORT, () => {
-    console.log('App Started on Port', process.env.PORT)
-})
+mongoose.connect(process.env.URI)
+    .then(() => {
+        app.listen(port, () => {
+            console.log('Deployed successfully on', port);
+        })
+    })
+    .catch((error) => {
+        console.log(error);
+    })
