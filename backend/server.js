@@ -21,5 +21,5 @@ app.use('/api/workouts', workoutRoutes)
 
 // Listening for requests
 app.listen(process.env.PORT, () => {
-    console.log('App Started on Port 5000', process.env.PORT)
+    console.log('App Started on Port', process.env.PORT)
 })
