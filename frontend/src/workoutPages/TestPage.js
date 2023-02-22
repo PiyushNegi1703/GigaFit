@@ -1,12 +1,13 @@
 import React from "react";
 import image from "../assets/login 2.png";
 import Navbar from "../components/Navbar";
+import workoutData from "../data/workoutData";
 
 const TestPage = () => {
   return (
     <>
       <Navbar />
-      <div className="testPage">
+      <div className="testPage" style={{ marginTop: "10vh" }}>
         <div
           style={{
             width: "100%",
@@ -33,7 +34,19 @@ const TestPage = () => {
           <h1 style={{ zIndex: "1", fontSize: "4em" }}>Arms Beginner</h1>
         </div>
 
-        <div></div>
+        <div className="exercise-wrapper">
+          {workoutData.map((e) => {
+            return (
+              <div className="exercise-container">
+                <div>
+                  <h3 style={{ fontWeight: "500" }}>{e.title}</h3>
+                  <h5 style={{ fontWeight: "500" }}>{e.reps}</h5>
+                </div>
+                <img src={e.image} alt="" width={"40vh"} />
+              </div>
+            );
+          })}
+        </div>
       </div>
     </>
   );

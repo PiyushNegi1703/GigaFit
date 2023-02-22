@@ -26,8 +26,9 @@ const Home = () => {
           <Tilt
             glareEnable={true}
             glarePosition={"all"}
-            tiltMaxAngleX={5}
-            tiltMaxAngleY={5}
+            glareMaxOpacity={0.2}
+            tiltMaxAngleX={10}
+            tiltMaxAngleY={10}
             className="suggestion-card"
           >
             <Link to="/workout">
