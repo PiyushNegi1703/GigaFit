@@ -273,6 +273,7 @@ a img {
 
 /* NAVBAR */
 nav {
+  height: 10vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -288,4 +289,30 @@ nav {
 .active {
   box-shadow: 10px 10px 20px #161616;
   background-color: #ca0024;
+}
+
+/* EXERCISES */
+.exercise-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.exercise-container {
+  margin-top: 2vh;
+  display: flex;
+  height: 8vh;
+  width: 60%;
+  justify-content: space-between;
+  padding: 20px;
+  align-items: center;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.exercise-container img {
+  filter: invert(1);
 }
