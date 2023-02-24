@@ -2,7 +2,7 @@ import abs from "../assets/Arms.png";
 import chest from "../assets/Chest.png";
 import arms from "../assets/legs.png";
 import back from "../assets/Back.png";
-import leg from "../assets/legs 1.png";
+import leg from "../assets/Legs 1.png";
 
 const data = [
   {
