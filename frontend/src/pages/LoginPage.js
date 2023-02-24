@@ -75,9 +75,9 @@ const LoginPage = () => {
         </form>
 
         <p style={{ fontSize: "0.9em" }}>
-          Already have an account?{" "}
+          Don't have an account?{" "}
           <Link to="/signup" className="register">
-            Login
+            Sign up
           </Link>
         </p>
       </div>
