@@ -42,7 +42,7 @@ const TestPage = () => {
                   <h3 style={{ fontWeight: "500" }}>{e.title}</h3>
                   <h5 style={{ fontWeight: "500" }}>{e.reps}</h5>
                 </div>
-                <img src={e.image} alt="" width={"40vh"} />
+                {/* <img src={e.image} alt="" width={"40vh"} /> */}
               </div>
             );
           })}

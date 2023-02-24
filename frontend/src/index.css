@@ -100,6 +100,7 @@ button:hover {
 .login-page {
   width: 100%;
   display: flex;
+  justify-content: space-between;
 }
 
 /* Form */
@@ -177,13 +178,13 @@ form button {
 .login-image {
   display: flex;
   justify-content: flex-end;
-  width: 50%;
+  width: 45%;
   height: 100vh;
   overflow: hidden;
 }
 
 .login-image img {
-  width: 90%;
+  width: 100%;
   height: 130%;
 }
 
@@ -296,6 +297,7 @@ nav {
   width: 100%;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .exercise-container {
@@ -316,3 +318,32 @@ nav {
 .exercise-container img {
   filter: invert(1);
 }
+
+/* GENDER PAGE */
+#male,
+#female {
+  width: 50%;
+  transition: 0.5s;
+}
+
+
+.femaleselcss{
+  scale: 1.2;
+  filter: drop-shadow(0px 1px 12px #D600FF);
+  
+}
+
+.maleselcss{
+  scale: 1.2;
+  filter: drop-shadow(0px 1px 12px #4B00FF);
+
+}
+
+.maleunselcss{
+  opacity: 50%;
+}
+.femaleunselcss{
+  opacity: 50%;
+  
+}
+
