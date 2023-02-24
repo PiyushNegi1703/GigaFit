@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import maleImg from "../assets/Male.png";
 import femaleImg from "../assets/Female.png";
+import { Link } from "react-router-dom";
 
 const GenderPage = () => {
   const [male, setMale] = useState(false);
   const [female, setFemale] = useState(false);
+  const [disButton, setDisButton] = useState(true);
 
   const femalelogic = () => {
     if (female) {
@@ -12,6 +14,7 @@ const GenderPage = () => {
     } else {
       setFemale(true);
       setMale(false);
+      setDisButton(false);
     }
   };
   const malelogic = () => {
@@ -20,6 +23,7 @@ const GenderPage = () => {
     } else {
       setMale(true);
       setFemale(false);
+      setDisButton(false);
     }
   };
 
@@ -76,7 +80,15 @@ const GenderPage = () => {
       </div>
 
       <div>
-        <button id="genderbutton" disabled>Go Ahead</button>
+        <Link to="/home">
+          <button
+            id="genderbutton"
+            disabled={disButton}
+            className={disButton ? "disabled" : ""}
+          >
+            Go Ahead
+          </button>
+        </Link>
       </div>
     </div>
   );

@@ -4,6 +4,7 @@ import { AiFillStar } from "react-icons/ai";
 import data from "../data/data";
 import fullBody from "../assets/Full bode workout.png";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 import { Link } from "react-router-dom";
 
 const Home = () => {
@@ -11,7 +12,17 @@ const Home = () => {
     <>
       <Navbar />
       <div className="home">
-        <div className="suggestion">
+        <div
+          className="suggestion"
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "space-around",
+            height: "30vh",
+            marginTop: "5vh",
+          }}
+        >
           <h1
             style={{
               color: "#fff",
@@ -106,7 +117,7 @@ const Home = () => {
           </div>
         </div>
 
-        <footer>Hello</footer>
+        <Footer />
       </div>
     </>
   );

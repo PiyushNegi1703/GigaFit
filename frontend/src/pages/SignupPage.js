@@ -4,8 +4,39 @@ import image from "../assets/Legs 1 red.png";
 // Google icon imported from react-icons
 import { FcGoogle } from "react-icons/fc";
 import { Link } from "react-router-dom";
+import TextField from "@mui/material/TextField";
+import { styled } from "@mui/material/styles";
 
 const LoginPage = () => {
+  const InputField = styled(TextField)({
+    "& label.Mui-focused": {
+      color: "white",
+    },
+    "& .MuiFilledInput-root.Mui-focused": {
+      backgroundColor: "#363636",
+    },
+    "& .MuiFilledInput-root:before": {
+      borderBottom: "3px solid #363636",
+    },
+    "& .MuiInputLabel-root": {
+      color: "rgba(255, 255, 255, 0.5)",
+    },
+    "& .MuiFilledInput-root": {
+      backgroundColor: "#262626",
+      color: "#fff",
+      width: "50vh",
+      padding: "10px",
+      borderTopLeftRadius: "5px",
+      borderTopRightRadius: "5px",
+      "&:hover": {
+        backgroundColor: "#363636",
+      },
+    },
+    "& .MuiFilledInput-root:after": {
+      borderBottom: "2px solid #ca0024",
+    },
+  });
+
   return (
     <div className="login-page">
       <div className="login-image">
@@ -17,22 +48,52 @@ const LoginPage = () => {
         <p>Please fill in all the fields to continue</p>
 
         <form>
-          <input type="text" placeholder="Username..." />
-          <input type="text" placeholder="Email..." />
-          <input type="password" placeholder="Password..." />
-          <input type="password" placeholder="Confirm Password..." />
+          <InputField
+            id="filled-basic"
+            margin="normal"
+            label="Username"
+            variant="filled"
+          />
+          <InputField
+            id="filled-basic"
+            margin="normal"
+            label="Email"
+            variant="filled"
+          />
+          <InputField
+            id="filled-basic"
+            margin="normal"
+            label="Password"
+            variant="filled"
+          />
+          <InputField
+            id="filled-basic"
+            margin="normal"
+            label="Confirm Password"
+            variant="filled"
+          />
 
-          <button className="login-button">Login</button>
-          <button className="google">
-            <FcGoogle style={{ fontSize: "1.5em", marginRight: "20px" }} />
-            Continue with Google
-          </button>
+          <Link to="/gender" className="login-button">
+            <button>Sign up</button>
+          </Link>
+          <Link
+            to="/gender"
+            style={{
+              marginTop: "2vh",
+              marginBottom: "2vh",
+            }}
+          >
+            <button className="google">
+              <FcGoogle style={{ fontSize: "1.5em", marginRight: "20px" }} />
+              Sign up with Google
+            </button>
+          </Link>
         </form>
 
         <p style={{ fontSize: "0.9em" }}>
-          Don't have an account?{" "}
+          Already have an account?{" "}
           <Link to="/login" className="register">
-            Sign Up
+            Login
           </Link>
         </p>
       </div>
