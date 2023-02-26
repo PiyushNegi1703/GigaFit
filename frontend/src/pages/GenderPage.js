@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import maleImg from "../assets/Male.png";
 import femaleImg from "../assets/Female.png";
 import { Link } from "react-router-dom";
+import { HashLoader } from "react-spinners";
 
 const GenderPage = () => {
   const [male, setMale] = useState(false);
@@ -42,6 +43,14 @@ const GenderPage = () => {
   };
   logic();
 
+  const [loading, setLoading] = useState(true);
+
+  if (loading) {
+    setTimeout(() => {
+      setLoading(false);
+    }, 5000);
+  }
+
   return (
     <div
       style={{
@@ -53,43 +62,60 @@ const GenderPage = () => {
         height: "100vh",
       }}
     >
-      <div>
-        <h1>What is Your Gender?</h1>
-      </div>
-
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-around",
-          width: "100%",
-        }}
-      >
-        <div
-          style={{ width: "50%", display: "flex", justifyContent: "flex-end" }}
-        >
-          <img src={maleImg} alt="male" onClick={() => malelogic()} id="male" />
+      {loading ? (
+        <div className="loader">
+          <HashLoader color="#ca0024" size={80} />
         </div>
-        <div style={{ width: "50%", display: "flex" }}>
-          <img
-            src={femaleImg}
-            onClick={() => femalelogic()}
-            alt="female"
-            id="female"
-          />
-        </div>
-      </div>
+      ) : (
+        <>
+          <div>
+            <h1>What is Your Gender?</h1>
+          </div>
 
-      <div>
-        <Link to="/home">
-          <button
-            id="genderbutton"
-            disabled={disButton}
-            className={disButton ? "disabled" : ""}
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-around",
+              width: "100%",
+            }}
           >
-            Go Ahead
-          </button>
-        </Link>
-      </div>
+            <div
+              style={{
+                width: "50%",
+                display: "flex",
+                justifyContent: "flex-end",
+              }}
+            >
+              <img
+                src={maleImg}
+                alt="male"
+                onClick={() => malelogic()}
+                id="male"
+              />
+            </div>
+            <div style={{ width: "50%", display: "flex" }}>
+              <img
+                src={femaleImg}
+                onClick={() => femalelogic()}
+                alt="female"
+                id="female"
+              />
+            </div>
+          </div>
+
+          <div>
+            <Link to="/home">
+              <button
+                id="genderbutton"
+                disabled={disButton}
+                className={disButton ? "disabled" : ""}
+              >
+                Go Ahead
+              </button>
+            </Link>
+          </div>
+        </>
+      )}
     </div>
   );
 };

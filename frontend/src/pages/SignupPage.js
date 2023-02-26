@@ -6,6 +6,8 @@ import { FcGoogle } from "react-icons/fc";
 import { Link } from "react-router-dom";
 import TextField from "@mui/material/TextField";
 import { styled } from "@mui/material/styles";
+import { useState } from "react";
+import { HashLoader } from "react-spinners";
 
 const LoginPage = () => {
   const InputField = styled(TextField)({
@@ -37,66 +39,93 @@ const LoginPage = () => {
     },
   });
 
+  const [loading, setLoading] = useState(true);
+
+  if (loading) {
+    setTimeout(() => {
+      setLoading(false);
+    }, 5000);
+  }
+
   return (
     <div className="login-page">
-      <div className="login-image">
-        <img src={image} alt="login-pic" />
-      </div>
+      {loading ? (
+        <div className="loader">
+          <HashLoader color="#ca0024" size={80} />
+        </div>
+      ) : (
+        <>
+          <div className="login-image">
+            <img src={image} alt="login-pic" />
+          </div>
 
-      <div className="form-container">
-        <h1>Register Yourself</h1>
-        <p>Please fill in all the fields to continue</p>
+          <div className="form-container">
+            <h1 style={{ fontSize: "3em" }}>Register Yourself</h1>
+            <p>Please fill in all the fields to continue</p>
 
-        <form>
-          <InputField
-            id="filled-basic"
-            margin="normal"
-            label="Username"
-            variant="filled"
-          />
-          <InputField
-            id="filled-basic"
-            margin="normal"
-            label="Email"
-            variant="filled"
-          />
-          <InputField
-            id="filled-basic"
-            margin="normal"
-            label="Password"
-            variant="filled"
-          />
-          <InputField
-            id="filled-basic"
-            margin="normal"
-            label="Confirm Password"
-            variant="filled"
-          />
+            <form
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                marginTop: "5vh",
+              }}
+            >
+              <InputField
+                id="filled-basic"
+                margin="normal"
+                label="Username"
+                variant="filled"
+              />
+              <InputField
+                id="filled-basic"
+                margin="normal"
+                label="Email"
+                variant="filled"
+              />
+              <InputField
+                id="filled-basic"
+                margin="normal"
+                label="Password"
+                variant="filled"
+              />
+              <InputField
+                id="filled-basic"
+                margin="normal"
+                label="Confirm Password"
+                variant="filled"
+              />
+              <Link
+                to="/gender"
+                className="login-button"
+                style={{ marginTop: "15vh" }}
+              >
+                <button>Sign up</button>
+              </Link>
+              <Link
+                to="/gender"
+                style={{
+                  marginTop: "2vh",
+                  marginBottom: "2vh",
+                }}
+              >
+                <button className="google">
+                  <FcGoogle
+                    style={{ fontSize: "1.5em", marginRight: "20px" }}
+                  />
+                  Sign up with Google
+                </button>
+              </Link>
+            </form>
 
-          <Link to="/gender" className="login-button">
-            <button>Sign up</button>
-          </Link>
-          <Link
-            to="/gender"
-            style={{
-              marginTop: "2vh",
-              marginBottom: "2vh",
-            }}
-          >
-            <button className="google">
-              <FcGoogle style={{ fontSize: "1.5em", marginRight: "20px" }} />
-              Sign up with Google
-            </button>
-          </Link>
-        </form>
-
-        <p style={{ fontSize: "0.9em" }}>
-          Already have an account?{" "}
-          <Link to="/login" className="register">
-            Login
-          </Link>
-        </p>
-      </div>
+            <p style={{ fontSize: "0.9em" }}>
+              Already have an account?{" "}
+              <Link to="/login" className="register">
+                Login
+              </Link>
+            </p>
+          </div>
+        </>
+      )}
     </div>
   );
 };
