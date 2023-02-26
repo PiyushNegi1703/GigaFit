@@ -1,28 +1,83 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import backgroundImage from '../assets/login 1.png';
-import logo from '../assets/logo.png';
+import React from "react";
+import { Link } from "react-router-dom";
+import backgroundImage from "../assets/login 1.png";
+import logo from "../assets/logo.png";
 
 const LandingPage = () => {
   return (
-    <div className='landing-page'>
+    <div className="landing-page">
       <div className="image-container">
-        <img src={backgroundImage} alt="img" className='background-image' />
+        <img
+          src={backgroundImage}
+          alt="img"
+          className="background-image"
+          style={{
+            position: "absolute",
+            width: "100%",
+            height: "832px",
+            left: "0px",
+            top: "-55px",
+            mixBlendMode: "hard-light",
+          }}
+        />
 
-        <div className="logo-container">
-            <img src={logo} alt="logo" />
+        <div
+          className="logo-container"
+          style={{
+            width: "100%",
+            height: "fit-content",
+            display: "flex",
+            justifyContent: "center",
+            position: "absolute",
+            top: "70vh",
+            backgroundColor: "transparent",
+          }}
+        >
+          <img
+            src={logo}
+            alt="logo"
+            style={{ width: "30vw", height: "12vh" }}
+          />
         </div>
 
-        <div className='text-container'>
-            <p>Transform your Body, Mind and Soul with <br /> GIGAFIT.</p>
+        <div
+          className="text-container"
+          style={{
+            width: "100%",
+            position: "absolute",
+            top: "83vh",
+            color: "rgba(255, 255, 255, 0.7)",
+            fontSize: "1.5em",
+            textAlign: "center",
+            display: "flex",
+            justifyContent: "center",
+            fontWeight: "700",
+          }}
+        >
+          <p>
+            Transform your Body, Mind and Soul with <br /> GIGAFIT.
+          </p>
         </div>
 
-        <div className='button-container'>
-            <Link to='/home'><button>Get Started</button></Link>
+        <div
+          className="button-container"
+          style={{
+            width: "100%",
+            height: "55px",
+            position: "absolute",
+            top: "92vh",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <Link to="/login">
+            <button>Get Started</button>
+          </Link>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default LandingPage;

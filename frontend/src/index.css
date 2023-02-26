@@ -26,55 +26,7 @@ a {
   text-align: center;
 }
 
-/* Landing page background image */
-.background-image {
-  position: absolute;
-  width: 100%;
-  height: 832px;
-  left: 0px;
-  top: -55px;
-  mix-blend-mode: hard-light;
-}
-
-/* Landing page logo */
-.logo-container {
-  width: 100%;
-  height: fit-content;
-  display: flex;
-  justify-content: center;
-  position: absolute;
-  top: 70vh;
-  background-color: transparent;
-}
-
-.logo-container img {
-  width: 30vw;
-  height: 12vh;
-}
-
-/* Landing page text */
-.text-container {
-  width: 100%;
-  position: absolute;
-  top: 83vh;
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 1.5em;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  font-weight: 700;
-}
-
-/* Landing page button */
-.button-container {
-  width: 100%;
-  height: 55px;
-  position: absolute;
-  top: 92vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+/* BUTTON */
 
 button {
   background-color: #ca0024;
@@ -96,14 +48,13 @@ button:hover {
   background-color: #ff385c;
 }
 
-/* Login Page */
+/* LOGIN & SIGNUP PAGE */
 .login-page {
   width: 100%;
   display: flex;
   justify-content: space-between;
 }
 
-/* Form */
 .form-container {
   width: 50%;
   display: flex;
@@ -121,17 +72,6 @@ form {
 
 .form-container h1 {
   font-size: 3em;
-}
-
-form input {
-  margin-top: 2.5vh;
-  padding: 25px;
-  width: 50vh;
-  border-radius: 25px;
-  background-color: #363636;
-  border: none;
-  color: white;
-  font-size: 1em;
 }
 
 form button {
@@ -160,8 +100,6 @@ form button {
 }
 
 .google {
-  margin-top: 2vh;
-  margin-bottom: 2vh;
   background-color: white;
   color: black;
   display: flex;
@@ -174,7 +112,6 @@ form button {
   background-color: white;
 }
 
-/* Image */
 .login-image {
   display: flex;
   justify-content: flex-end;
@@ -188,18 +125,7 @@ form button {
   height: 130%;
 }
 
-/* Home Page */
-
-/* Suggestion */
-.suggestion {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-  height: 30vh;
-  margin-top: 5vh;
-}
-
+/* HOME PAGE */
 .suggestion-card {
   display: flex;
   justify-content: center;
@@ -265,7 +191,6 @@ a img {
   width: 140%;
   filter: grayscale(0.5);
   mix-blend-mode: overlay;
-  /* z-index: -1; */
 }
 
 .star {
@@ -326,24 +251,39 @@ nav {
   transition: 0.5s;
 }
 
-
-.femaleselcss{
+.femaleselcss {
   scale: 1.2;
-  filter: drop-shadow(0px 1px 12px #D600FF);
-  
+  filter: drop-shadow(0px 1px 12px #d600ff);
 }
 
-.maleselcss{
+.maleselcss {
   scale: 1.2;
-  filter: drop-shadow(0px 1px 12px #4B00FF);
-
+  filter: drop-shadow(0px 1px 12px #4b00ff);
 }
 
-.maleunselcss{
+.maleunselcss {
   opacity: 50%;
 }
-.femaleunselcss{
+.femaleunselcss {
   opacity: 50%;
-  
 }
 
+.disabled {
+  opacity: 0.5;
+}
+
+.disabled:hover {
+  scale: 1;
+  font-size: 1.2em;
+  cursor: auto;
+  background-color: #ca0025f5;
+}
+
+footer svg {
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+footer svg:hover {
+  scale: 1.2;
+}
