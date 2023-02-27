@@ -7,22 +7,23 @@ PR #2
 1. React App initialised - PR link - https://github.com/kalviumcommunity/GigaFit/pull/2/commits/623c5be167e0284517a3c350abfb5f8b3935542f
 
 PR #3
-2. NodeJs - setting up a project with package.json - PR link - https://github.com/kalviumcommunity/GigaFit/pull/3/commits/226e06095b5c42c08376fb87d695251348c66dfc
-3. NPM - PR link - https://github.com/kalviumcommunity/GigaFit/pull/3/commits/226e06095b5c42c08376fb87d695251348c66dfc
-4. Nodemon - PR link - https://github.com/kalviumcommunity/GigaFit/pull/3/commits/226e06095b5c42c08376fb87d695251348c66dfc
-5. Express JS first route - PR link - https://github.com/kalviumcommunity/GigaFit/pull/3/commits/226e06095b5c42c08376fb87d695251348c66dfc
-6. Middleware - PR link - https://github.com/kalviumcommunity/GigaFit/pull/3/commits/226e06095b5c42c08376fb87d695251348c66dfc
-7. Use of public folder to serve files - PR link - https://github.com/kalviumcommunity/GigaFit/pull/3/commits/226e06095b5c42c08376fb87d695251348c66dfc
+2. NodeJs - setting up a project with package.json - PR link - https://github.com/kalviumcommunity/GigaFit/pull/3
+3. NPM - PR link - https://github.com/kalviumcommunity/GigaFit/pull/3
+4. Nodemon - PR link - https://github.com/kalviumcommunity/GigaFit/pull/3
+5. Express JS first route - PR link - https://github.com/kalviumcommunity/GigaFit/pull/3
+6. NodeJS Modules - PR link - https://github.com/kalviumcommunity/GigaFit/pull/3
+7. Middleware - PR link - https://github.com/kalviumcommunity/GigaFit/pull/3
+8. Use of public folder to serve files - PR link - https://github.com/kalviumcommunity/GigaFit/pull/3
 
 PR #4
-8. Application components created - PR link - https://github.com/kalviumcommunity/GigaFit/pull/4/commits/83b41407d79edf370c34c60a58ed6735ddeb63c8
+9. Application components created - PR link - https://github.com/kalviumcommunity/GigaFit/pull/4
 
 PR#5
-9. ExpressJS - additional routes - PR link - https://github.com/kalviumcommunity/GigaFit/pull/5/commits/7880ee8987bf65e01e22fefee3648638c4a3f3c4
-10. Mongoose - PR link - https://github.com/kalviumcommunity/GigaFit/pull/5/commits/7880ee8987bf65e01e22fefee3648638c4a3f3c4
-11. CRUD Operations - PR link - https://github.com/kalviumcommunity/GigaFit/pull/5/commits/7880ee8987bf65e01e22fefee3648638c4a3f3c4
-12. Simple API - CRUD Operations using NodeJs - PR link - https://github.com/kalviumcommunity/GigaFit/pull/5/commits/7880ee8987bf65e01e22fefee3648638c4a3f3c4
-13. Schemas and Models - PR link - https://github.com/kalviumcommunity/GigaFit/pull/5/commits/7880ee8987bf65e01e22fefee3648638c4a3f3c4
+10. ExpressJS - additional routes - PR link - https://github.com/kalviumcommunity/GigaFit/pull/5
+11. Mongoose - PR link - https://github.com/kalviumcommunity/GigaFit/pull/5
+12. CRUD Operations - PR link - https://github.com/kalviumcommunity/GigaFit/pull/5
+13. Simple API - CRUD Operations using NodeJs - PR link - https://github.com/kalviumcommunity/GigaFit/pull/5
+14. Schemas and Models - PR link - https://github.com/kalviumcommunity/GigaFit/pull/5
 
 Other libraries used -
 1. dotenv - PR link - https://github.com/kalviumcommunity/GigaFit/pull/3/commits/226e06095b5c42c08376fb87d695251348c66dfc
