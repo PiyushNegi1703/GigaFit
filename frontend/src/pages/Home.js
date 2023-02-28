@@ -6,10 +6,31 @@ import fullBody from "../assets/Full bode workout.png";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { HashLoader } from "react-spinners";
+import { useWorkoutContext } from "../hooks/useWorkoutContext";
+import { useAuthContext } from "../hooks/useAuthContext";
 
 const Home = () => {
+  const { workouts, dispatch } = useWorkoutContext();
+  const { user } = useAuthContext();
+
+  useEffect(() => {
+    const fetchWorkouts = async () => {
+      const response = await fetch("http://localhost:5000/api/workouts/");
+
+      const json = await response.json();
+
+      if (response.ok) {
+        dispatch({ type: "SET_WORKOUTS", payload: json });
+      }
+    };
+
+    if (user) {
+      fetchWorkouts();
+    }
+  }, [dispatch, user]);
+
   const [loading, setLoading] = useState(true);
 
   if (loading) {
@@ -73,28 +94,31 @@ const Home = () => {
             {/* WORKOUTS CONTAINER */}
             <div className="workouts" style={{ marginBottom: "5vh" }}>
               {/* BEGINNER WORKOUTS */}
-              <h1 style={{ margin: "2vh 0 2vh 7%" }}>Beginner Workouts</h1>
-              <div className="card-container">
-                {data.map((e) => {
+              {workouts &&
+                workouts.map((e) => {
                   return (
-                    <Tilt
-                      glareEnable={true}
-                      glarePosition={"all"}
-                      className="card"
-                    >
-                      <Link to="/workout">
-                        <img src={e.image} alt="" />
-                        <h2>{e.title} Beginner</h2>
-                        <div className="rating">
-                          <AiFillStar className="star" color="#ff385c" />
-                          <AiFillStar className="star" />
-                          <AiFillStar className="star" />
-                        </div>
-                      </Link>
-                    </Tilt>
+                    <>
+                      <h1 style={{ margin: "2vh 0 2vh 7%" }}>{e.title}</h1>
+                      <div className="card-container">
+                        <Tilt
+                          glareEnable={true}
+                          glarePosition={"all"}
+                          className="card"
+                        >
+                          <Link to="/workout">
+                            {/* <img src={e.image} alt="" /> */}
+                            <h2>{e.workout1.title}</h2>
+                            <div className="rating">
+                              <AiFillStar className="star" color="#ff385c" />
+                              <AiFillStar className="star" />
+                              <AiFillStar className="star" />
+                            </div>
+                          </Link>
+                        </Tilt>
+                      </div>
+                    </>
                   );
                 })}
-              </div>
 
               {/* INTERMEDIATE WORKOUTS */}
               <h1 style={{ margin: "2vh 0 2vh 7%" }}>Intermediate Workouts</h1>
