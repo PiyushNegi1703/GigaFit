@@ -1,4 +1,3 @@
-import React from "react";
 // Image imported from assets
 import image from "../assets/Legs 1 red.png";
 // Google icon imported from react-icons
@@ -8,8 +7,10 @@ import TextField from "@mui/material/TextField";
 import { styled } from "@mui/material/styles";
 import { useState } from "react";
 import { HashLoader } from "react-spinners";
+import { useSignup } from "../hooks/useSignup";
 
 const LoginPage = () => {
+  // Customizing MUI InputField
   const InputField = styled(TextField)({
     "& label.Mui-focused": {
       color: "white",
@@ -39,12 +40,32 @@ const LoginPage = () => {
     },
   });
 
+  // Defing constants to use in functions
   const [loading, setLoading] = useState(true);
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState(false);
+
+  // Taking constants from useSignup
+  const { signup, error, isLoading } = useSignup();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    await signup(username, email, password);
+  };
 
   if (loading) {
     setTimeout(() => {
       setLoading(false);
     }, 5000);
+  }
+
+  if (document.getElementById("confirm-password").value === password) {
+    setConfirmPassword(true);
+  } else {
+    setConfirmPassword(false);
   }
 
   return (
@@ -69,37 +90,50 @@ const LoginPage = () => {
                 flexDirection: "column",
                 marginTop: "5vh",
               }}
+              onSubmit={handleSubmit}
             >
               <InputField
+                type="text"
                 id="filled-basic"
                 margin="normal"
                 label="Username"
                 variant="filled"
+                onChange={(e) => setUsername(e.target.value)}
+                // value={username}
               />
               <InputField
+                type="email"
                 id="filled-basic"
                 margin="normal"
                 label="Email"
                 variant="filled"
+                onChange={(e) => setEmail(e.target.value)}
+                // value={email}
               />
               <InputField
+                type="password"
                 id="filled-basic"
                 margin="normal"
                 label="Password"
                 variant="filled"
+                onChange={(e) => setPassword(e.target.value)}
+                // value={password}
               />
               <InputField
-                id="filled-basic"
+                type="password"
+                id="filled-basic confirm-password"
                 margin="normal"
                 label="Confirm Password"
                 variant="filled"
+                error={confirmPassword}
               />
+              {error && <div className="error">{error}</div>}
               <Link
                 to="/gender"
                 className="login-button"
                 style={{ marginTop: "15vh" }}
               >
-                <button>Sign up</button>
+                <button disabled={isLoading}>Sign up</button>
               </Link>
               <Link
                 to="/gender"

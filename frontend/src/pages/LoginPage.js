@@ -1,4 +1,5 @@
-import React from "react";
+import { useState } from "react";
+import { useLogin } from "../hooks/useLogin";
 // Image imported from assets
 import image from "../assets/legs red.png";
 // Google icon imported from react-icons
@@ -6,10 +7,10 @@ import { FcGoogle } from "react-icons/fc";
 import { Link } from "react-router-dom";
 import TextField from "@mui/material/TextField";
 import { styled } from "@mui/material/styles";
-import { useState } from "react";
 import { HashLoader } from "react-spinners";
 
 const LoginPage = () => {
+  // Customizing MUI InputField
   const InputField = styled(TextField)({
     "& label.Mui-focused": {
       color: "white",
@@ -38,7 +39,20 @@ const LoginPage = () => {
       borderBottom: "2px solid #ca0024",
     },
   });
+
+  // Defining constants to use in functions
   const [loading, setLoading] = useState(true);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  // Taking constants from useLogin
+  const { login, error, isLoading } = useLogin();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    await login(email, password);
+  };
 
   if (loading) {
     setTimeout(() => {
@@ -64,26 +78,33 @@ const LoginPage = () => {
                 flexDirection: "column",
                 marginTop: "5vh",
               }}
+              onSubmit={handleSubmit}
             >
               <InputField
+                type="email"
                 id="filled-basic"
                 margin="normal"
-                label="Username or Email"
+                label="Email"
                 variant="filled"
+                onChange={(e) => setEmail(e.target.value)}
+                value={email}
               />
               <InputField
+                type="password"
                 id="filled-basic"
                 margin="normal"
                 label="Password"
                 variant="filled"
+                onChange={(e) => setPassword(e.target.value)}
+                value={password}
               />
-
+              {error && <div className="error">{error}</div>}
               <Link
                 to="/gender"
                 className="login-button"
                 style={{ marginTop: "15vh" }}
               >
-                <button>Login</button>
+                <button disabled={isLoading}>Login</button>
               </Link>
               <Link
                 to="/gender"
