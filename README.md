@@ -25,7 +25,16 @@ PR#5
 13. Simple API - CRUD Operations using NodeJs - PR link - https://github.com/kalviumcommunity/GigaFit/pull/5
 14. Schemas and Models - PR link - https://github.com/kalviumcommunity/GigaFit/pull/5
 
+PR#13
+15. Authentication - PR link -
+
 Other libraries used -
 1. dotenv - PR link - https://github.com/kalviumcommunity/GigaFit/pull/3
 2. react-icons - PR link - https://github.com/kalviumcommunity/GigaFit/pull/4
 3. bcrypt - PR link - https://github.com/kalviumcommunity/GigaFit/pull/5
+4. Material UI - PR link -
+5. react-parallax-tilt - PR link -
+6. react-spinners - PR link -
+
+
+REACT APP DEPLOYED - https://giga-fit.netlify.app/

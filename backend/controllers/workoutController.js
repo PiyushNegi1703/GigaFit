@@ -29,13 +29,10 @@ const getWorkout = async (req, resp) => {
 
 // Posting a new workout
 const newWorkout = async (req, resp) => {
-  const { title, workout1, workout2, workout3, workout4, workout5 } = req.body;
+  const { workout1, workout2, workout3 } = req.body;
 
   let emptyFields = [];
 
-  if (!title) {
-    emptyFields.push("title");
-  }
   if (!workout1) {
     emptyFields.push("workout1");
   }
@@ -45,12 +42,6 @@ const newWorkout = async (req, resp) => {
   if (!workout3) {
     emptyFields.push("workout3");
   }
-  if (!workout4) {
-    emptyFields.push("workout4");
-  }
-  if (!workout5) {
-    emptyFields.push("workout5");
-  }
 
   if (emptyFields.length > 0) {
     return resp.status(400).json({ error: "Please fill in all the fields" });
@@ -58,12 +49,9 @@ const newWorkout = async (req, resp) => {
 
   try {
     const workout = await Workouts.create({
-      title,
       workout1,
       workout2,
       workout3,
-      workout4,
-      workout5,
     });
     resp.status(200).json(workout);
   } catch (error) {
