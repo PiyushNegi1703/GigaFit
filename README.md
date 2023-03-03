@@ -35,3 +35,6 @@ Other libraries used -
 4. Material UI - PR link -
 5. react-parallax-tilt - PR link -
 6. react-spinners - PR link -
+
+
+REACT APP DEPLOYED - https://giga-fit.netlify.app/
