@@ -4,42 +4,10 @@ import { useLogin } from "../hooks/useLogin";
 import image from "../assets/legs red.png";
 // Google icon imported from react-icons
 import { FcGoogle } from "react-icons/fc";
-import { Link } from "react-router-dom";
-import TextField from "@mui/material/TextField";
-import { styled } from "@mui/material/styles";
+import { Link, Navigate } from "react-router-dom";
 import { HashLoader } from "react-spinners";
 
 const LoginPage = () => {
-  // Customizing MUI InputField
-  const InputField = styled(TextField)({
-    "& label.Mui-focused": {
-      color: "white",
-    },
-    "& .MuiFilledInput-root.Mui-focused": {
-      backgroundColor: "#363636",
-    },
-    "& .MuiFilledInput-root:before": {
-      borderBottom: "3px solid #363636",
-    },
-    "& .MuiInputLabel-root": {
-      color: "rgba(255, 255, 255, 0.5)",
-    },
-    "& .MuiFilledInput-root": {
-      backgroundColor: "#262626",
-      color: "#fff",
-      width: "50vh",
-      padding: "10px",
-      borderTopLeftRadius: "5px",
-      borderTopRightRadius: "5px",
-      "&:hover": {
-        backgroundColor: "#363636",
-      },
-    },
-    "& .MuiFilledInput-root:after": {
-      borderBottom: "2px solid #ca0024",
-    },
-  });
-
   // Defining constants to use in functions
   const [loading, setLoading] = useState(true);
   const [email, setEmail] = useState("");
@@ -51,13 +19,25 @@ const LoginPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    if (isLoading === false) {
+      <Navigate to="/gender" />;
+    }
+    
     await login(email, password);
+
+    if (error.includes('password')) {
+      document.getElementById('password').style.border = '1px solid #ca0024'
+    }
+
+    if (error.includes('Email')) {
+      document.getElementById('password').style.border = '1px solid #ca0024'
+    }
   };
 
   if (loading) {
     setTimeout(() => {
       setLoading(false);
-    }, 5000);
+    }, 3000);
   }
 
   return (
@@ -80,46 +60,34 @@ const LoginPage = () => {
               }}
               onSubmit={handleSubmit}
             >
-              <InputField
-                type="email"
-                id="filled-basic"
-                margin="normal"
-                label="Email"
-                variant="filled"
-                onChange={(e) => setEmail(e.target.value)}
-                value={email}
-              />
-              <InputField
-                type="password"
-                id="filled-basic"
-                margin="normal"
-                label="Password"
-                variant="filled"
-                onChange={(e) => setPassword(e.target.value)}
-                value={password}
-              />
+              <div className="inputBox">
+                <input
+                  type="email"
+                  id="email"
+                  onChange={(e) => setEmail(e.target.value)}
+                  value={email}
+                  required='required'
+                />
+                <span>Email</span>
+              </div>
+              <div className="inputBox">
+                <input
+                  type="password"
+                  id="password"
+                  onChange={(e) => setPassword(e.target.value)}
+                  value={password}
+                  required='required'
+                />
+                <span>Password</span>
+              </div>
               {error && <div className="error">{error}</div>}
-              <Link
-                to="/gender"
-                className="login-button"
-                style={{ marginTop: "15vh" }}
-              >
-                <button disabled={isLoading}>Login</button>
-              </Link>
-              <Link
-                to="/gender"
-                style={{
-                  marginTop: "2vh",
-                  marginBottom: "2vh",
-                }}
-              >
-                <button className="google">
+              <button disabled={isLoading} style={{marginTop: '7vh'}}>Login</button>
+                <button className="google" disabled={isLoading}>
                   <FcGoogle
                     style={{ fontSize: "1.5em", marginRight: "20px" }}
                   />
                   Continue with Google
                 </button>
-              </Link>
             </form>
 
             <p style={{ fontSize: "0.9em" }}>

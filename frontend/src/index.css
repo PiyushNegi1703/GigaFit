@@ -64,6 +64,53 @@ button:hover {
   height: 100vh;
 }
 
+form {
+  position: relative;
+  gap: 3vh;
+}
+
+.inputBox input {
+  width: 100%;
+  padding: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: #000000;
+  border-radius: 5px;
+  font-size: 1em;
+  outline: none;
+  color: #ffffff;
+  transition: 0.5s;
+}
+
+.inputBox span {
+  position: absolute;
+  left: 0;
+  padding: 20px;
+  pointer-events: none;
+  font-size: 1em;
+  color: rgba(255, 255, 255, 0.25);
+  text-transform: uppercase;
+  transition: 0.5s;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+}
+
+.inputBox input:valid ~ span,
+.inputBox input:focus-visible ~ span
+{
+  color: #000000;
+  transform: translateX(10px) translateY(-7px);
+  font-size: 0.65em;
+  padding: 0 10px;
+  background: #ffffff;
+  border-radius: 2px;
+}
+
+.inputBox input:valid,
+.inputBox input:focus
+{
+  border: 1px solid #ffffff;
+}
+
 form button {
   width: 50vh;
   border-radius: 25px;
@@ -280,4 +327,17 @@ footer svg:hover {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+div.error {
+  padding: 10px;
+  background: #000;
+  border: 1px solid #ca0024;
+  color: #ca0024;
+  border-radius: 4px;
+  margin: 20px 0;
+}
+
+input.error {
+  border: 1px solid #ca0024;
 }

@@ -3,49 +3,16 @@ import image from "../assets/Legs 1 red.png";
 // Google icon imported from react-icons
 import { FcGoogle } from "react-icons/fc";
 import { Link } from "react-router-dom";
-import TextField from "@mui/material/TextField";
-import { styled } from "@mui/material/styles";
 import { useState } from "react";
 import { HashLoader } from "react-spinners";
 import { useSignup } from "../hooks/useSignup";
 
 const LoginPage = () => {
-  // Customizing MUI InputField
-  const InputField = styled(TextField)({
-    "& label.Mui-focused": {
-      color: "white",
-    },
-    "& .MuiFilledInput-root.Mui-focused": {
-      backgroundColor: "#363636",
-    },
-    "& .MuiFilledInput-root:before": {
-      borderBottom: "3px solid #363636",
-    },
-    "& .MuiInputLabel-root": {
-      color: "rgba(255, 255, 255, 0.5)",
-    },
-    "& .MuiFilledInput-root": {
-      backgroundColor: "#262626",
-      color: "#fff",
-      width: "50vh",
-      padding: "10px",
-      borderTopLeftRadius: "5px",
-      borderTopRightRadius: "5px",
-      "&:hover": {
-        backgroundColor: "#363636",
-      },
-    },
-    "& .MuiFilledInput-root:after": {
-      borderBottom: "2px solid #ca0024",
-    },
-  });
-
   // Defing constants to use in functions
   const [loading, setLoading] = useState(true);
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState(false);
 
   // Taking constants from useSignup
   const { signup, error, isLoading } = useSignup();
@@ -59,13 +26,7 @@ const LoginPage = () => {
   if (loading) {
     setTimeout(() => {
       setLoading(false);
-    }, 5000);
-  }
-
-  if (document.getElementById("confirm-password").value === password) {
-    setConfirmPassword(true);
-  } else {
-    setConfirmPassword(false);
+    }, 3000);
   }
 
   return (
@@ -92,63 +53,45 @@ const LoginPage = () => {
               }}
               onSubmit={handleSubmit}
             >
-              <InputField
+            <div className="inputBox">
+              <input
                 type="text"
-                id="filled-basic"
-                margin="normal"
-                label="Username"
-                variant="filled"
+                id="text"
                 onChange={(e) => setUsername(e.target.value)}
-                // value={username}
+                value={username}
+                required='required'
               />
-              <InputField
+              <span>username</span>
+            </div>
+            <div className="inputBox">
+              <input
                 type="email"
-                id="filled-basic"
-                margin="normal"
-                label="Email"
-                variant="filled"
+                id="email"
                 onChange={(e) => setEmail(e.target.value)}
-                // value={email}
+                value={email}
+                required='required'
               />
-              <InputField
-                type="password"
-                id="filled-basic"
-                margin="normal"
-                label="Password"
-                variant="filled"
-                onChange={(e) => setPassword(e.target.value)}
-                // value={password}
-              />
-              <InputField
-                type="password"
-                id="filled-basic confirm-password"
-                margin="normal"
-                label="Confirm Password"
-                variant="filled"
-                error={confirmPassword}
-              />
+              <span>email</span>
+            </div>
+            
+            <div className="inputBox">
+                <input
+                  type="password"
+                  id="password"
+                  onChange={(e) => setPassword(e.target.value)}
+                  value={password}
+                  required='required'
+                />
+                <span>password</span>
+              </div>
               {error && <div className="error">{error}</div>}
-              <Link
-                to="/gender"
-                className="login-button"
-                style={{ marginTop: "15vh" }}
-              >
-                <button disabled={isLoading}>Sign up</button>
-              </Link>
-              <Link
-                to="/gender"
-                style={{
-                  marginTop: "2vh",
-                  marginBottom: "2vh",
-                }}
-              >
-                <button className="google">
+                <button disabled={isLoading} style={{marginTop: '7vh'}}>Sign up</button>
+                <button className="google" disabled={isLoading}>
                   <FcGoogle
                     style={{ fontSize: "1.5em", marginRight: "20px" }}
                   />
                   Sign up with Google
                 </button>
-              </Link>
             </form>
 
             <p style={{ fontSize: "0.9em" }}>

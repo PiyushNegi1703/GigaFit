@@ -1,7 +1,7 @@
 import React from "react";
 import Tilt from "react-parallax-tilt";
 import { AiFillStar } from "react-icons/ai";
-import data from "../data/data";
+// import data from "../data/data";
 import fullBody from "../assets/Full bode workout.png";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -94,78 +94,80 @@ const Home = () => {
             {/* WORKOUTS CONTAINER */}
             <div className="workouts" style={{ marginBottom: "5vh" }}>
               {/* BEGINNER WORKOUTS */}
-              {workouts &&
-                workouts.map((e) => {
-                  return (
-                    <>
-                      <h1 style={{ margin: "2vh 0 2vh 7%" }}>{e.title}</h1>
-                      <div className="card-container">
-                        <Tilt
-                          glareEnable={true}
-                          glarePosition={"all"}
-                          className="card"
-                        >
-                          <Link to="/workout">
-                            {/* <img src={e.image} alt="" /> */}
-                            <h2>{e.workout1.title}</h2>
-                            <div className="rating">
-                              <AiFillStar className="star" color="#ff385c" />
-                              <AiFillStar className="star" />
-                              <AiFillStar className="star" />
-                            </div>
-                          </Link>
-                        </Tilt>
-                      </div>
-                    </>
-                  );
-                })}
-
+              {/* {data && */}
+              <h1 style={{ margin: "2vh 0 2vh 7%" }}>Beginner Workouts</h1>
+              <div className="card-container">
+                {workouts &&
+                  workouts.workout1.data.map((e) => {
+                    return (
+                      <Tilt
+                        glareEnable={true}
+                        glarePosition={"all"}
+                        className="card"
+                        key={e.id}
+                      >
+                        <Link to="/workout">
+                          <img src={e.image} alt="" />
+                          <h2>{e.title}</h2>
+                          <div className="rating">
+                            <AiFillStar className="star" color="#ff385c" />
+                            <AiFillStar className="star" />
+                            <AiFillStar className="star" />
+                          </div>
+                        </Link>
+                      </Tilt>
+                    );
+                  })}
+              </div>
               {/* INTERMEDIATE WORKOUTS */}
               <h1 style={{ margin: "2vh 0 2vh 7%" }}>Intermediate Workouts</h1>
               <div className="card-container">
-                {data.map((e) => {
-                  return (
-                    <Tilt
-                      glareEnable={true}
-                      glarePosition={"all"}
-                      className="card"
-                    >
-                      <Link to="/workout">
-                        <img src={e.image} alt="" />
-                        <h2>{e.title} Intermediate</h2>
-                        <div className="rating">
-                          <AiFillStar className="star" color="#ff385c" />
-                          <AiFillStar className="star" color="#ff385c" />
-                          <AiFillStar className="star" />
-                        </div>
-                      </Link>
-                    </Tilt>
-                  );
-                })}
+                {workouts &&
+                  workouts.workout2.data.map((e) => {
+                    return (
+                      <Tilt
+                        glareEnable={true}
+                        glarePosition={"all"}
+                        className="card"
+                        key={e.id}
+                      >
+                        <Link to="/workout">
+                          <img src={e.image} alt="" />
+                          <h2>{e.title}</h2>
+                          <div className="rating">
+                            <AiFillStar className="star" color="#ff385c" />
+                            <AiFillStar className="star" color="#ff385c" />
+                            <AiFillStar className="star" />
+                          </div>
+                        </Link>
+                      </Tilt>
+                    );
+                  })}
               </div>
-
               {/* ADVANCED WORKOUTS */}
               <h1 style={{ margin: "2vh 0 2vh 7%" }}>Advanced Workouts</h1>
               <div className="card-container">
-                {data.map((e) => {
-                  return (
-                    <Tilt
-                      glareEnable={true}
-                      glarePosition={"all"}
-                      className="card"
-                    >
-                      <Link to="/workout">
-                        <img src={e.image} alt="" />
-                        <h2>{e.title} Advanced</h2>
-                        <div className="rating">
-                          <AiFillStar className="star" color="#ff385c" />
-                          <AiFillStar className="star" color="#ff385c" />
-                          <AiFillStar className="star" color="#ff385c" />
-                        </div>
-                      </Link>
-                    </Tilt>
-                  );
-                })}
+                {workouts &&
+                  workouts.workout3.data.map((e) => {
+                    return (
+                      <Tilt
+                        glareEnable={true}
+                        glarePosition={"all"}
+                        className="card"
+                        key={e.id}
+                      >
+                        <Link to="/workout">
+                          <img src={e.image} alt="" />
+                          <h2>{e.title}</h2>
+                          <div className="rating">
+                            <AiFillStar className="star" color="#ff385c" />
+                            <AiFillStar className="star" color="#ff385c" />
+                            <AiFillStar className="star" color="#ff385c" />
+                          </div>
+                        </Link>
+                      </Tilt>
+                    );
+                  })}
               </div>
             </div>
 
