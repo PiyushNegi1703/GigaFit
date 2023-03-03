@@ -1,6 +1,5 @@
 import React from "react";
 import Tilt from "react-parallax-tilt";
-import { AiFillStar } from "react-icons/ai";
 // import data from "../data/data";
 import fullBody from "../assets/Full bode workout.png";
 import Navbar from "../components/Navbar";
@@ -21,8 +20,6 @@ const Home = () => {
     const fetchWorkouts = async () => {
       const response = await fetch(`${process.env.REACT_APP_API}/workouts/`);
       const json = await response.json();
-
-      console.log(json)
 
       if (response.ok) {
         dispatch({ type: "SET_WORKOUTS", payload: json });
