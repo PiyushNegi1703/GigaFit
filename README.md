@@ -26,15 +26,15 @@ PR#5
 14. Schemas and Models - PR link - https://github.com/kalviumcommunity/GigaFit/pull/5
 
 PR#13
-15. Authentication - PR link -
+15. Authentication - PR link - https://github.com/kalviumcommunity/GigaFit/pull/13
 
 Other libraries used -
 1. dotenv - PR link - https://github.com/kalviumcommunity/GigaFit/pull/3
 2. react-icons - PR link - https://github.com/kalviumcommunity/GigaFit/pull/4
 3. bcrypt - PR link - https://github.com/kalviumcommunity/GigaFit/pull/5
-4. Material UI - PR link -
-5. react-parallax-tilt - PR link -
-6. react-spinners - PR link -
+4. Material UI - PR link - https://github.com/kalviumcommunity/GigaFit/pull/13
+5. react-parallax-tilt - PR link - https://github.com/kalviumcommunity/GigaFit/pull/13
+6. react-spinners - PR link - https://github.com/kalviumcommunity/GigaFit/pull/13
 
 
 REACT APP DEPLOYED - https://giga-fit.netlify.app/
