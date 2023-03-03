@@ -22,7 +22,7 @@ const LoginPage = () => {
     if (isLoading === false) {
       <Navigate to="/gender" />;
     }
-    
+
     await login(email, password);
 
     if (error.includes('password')) {
@@ -81,7 +81,7 @@ const LoginPage = () => {
                 <span>Password</span>
               </div>
               {error && <div className="error">{error}</div>}
-              <button disabled={isLoading} style={{marginTop: '7vh'}}>Login</button>
+              <button type="submit" disabled={isLoading} style={{marginTop: '7vh'}}>Login</button>
                 <button className="google" disabled={isLoading}>
                   <FcGoogle
                     style={{ fontSize: "1.5em", marginRight: "20px" }}

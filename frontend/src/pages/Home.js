@@ -10,6 +10,8 @@ import { useState, useEffect } from "react";
 import { HashLoader } from "react-spinners";
 import { useWorkoutContext } from "../hooks/useWorkoutContext";
 import { useAuthContext } from "../hooks/useAuthContext";
+import Workouts from "../components/Workouts";
+import data from "../data/data";
 
 const Home = () => {
   const { workouts, dispatch } = useWorkoutContext();
@@ -17,9 +19,10 @@ const Home = () => {
 
   useEffect(() => {
     const fetchWorkouts = async () => {
-      const response = await fetch("http://localhost:5000/api/workouts/");
-
+      const response = await fetch(`${process.env.API}/workouts/`);
       const json = await response.json();
+
+      console.log(json)
 
       if (response.ok) {
         dispatch({ type: "SET_WORKOUTS", payload: json });
@@ -94,79 +97,28 @@ const Home = () => {
             {/* WORKOUTS CONTAINER */}
             <div className="workouts" style={{ marginBottom: "5vh" }}>
               {/* BEGINNER WORKOUTS */}
-              {/* {data && */}
               <h1 style={{ margin: "2vh 0 2vh 7%" }}>Beginner Workouts</h1>
               <div className="card-container">
-                {workouts &&
-                  workouts.workout1.data.map((e) => {
-                    return (
-                      <Tilt
-                        glareEnable={true}
-                        glarePosition={"all"}
-                        className="card"
-                        key={e.id}
-                      >
-                        <Link to="/workout">
-                          <img src={e.image} alt="" />
-                          <h2>{e.title}</h2>
-                          <div className="rating">
-                            <AiFillStar className="star" color="#ff385c" />
-                            <AiFillStar className="star" />
-                            <AiFillStar className="star" />
-                          </div>
-                        </Link>
-                      </Tilt>
-                    );
+                {data &&
+                  data.map((e, i) => {
+                    return <Workouts starCount={1} key={i} />;
                   })}
               </div>
+
               {/* INTERMEDIATE WORKOUTS */}
               <h1 style={{ margin: "2vh 0 2vh 7%" }}>Intermediate Workouts</h1>
               <div className="card-container">
-                {workouts &&
-                  workouts.workout2.data.map((e) => {
-                    return (
-                      <Tilt
-                        glareEnable={true}
-                        glarePosition={"all"}
-                        className="card"
-                        key={e.id}
-                      >
-                        <Link to="/workout">
-                          <img src={e.image} alt="" />
-                          <h2>{e.title}</h2>
-                          <div className="rating">
-                            <AiFillStar className="star" color="#ff385c" />
-                            <AiFillStar className="star" color="#ff385c" />
-                            <AiFillStar className="star" />
-                          </div>
-                        </Link>
-                      </Tilt>
-                    );
+                {data &&
+                  data.map((e, i) => {
+                    return <Workouts starCount={2} key={i} />;
                   })}
               </div>
               {/* ADVANCED WORKOUTS */}
               <h1 style={{ margin: "2vh 0 2vh 7%" }}>Advanced Workouts</h1>
               <div className="card-container">
-                {workouts &&
-                  workouts.workout3.data.map((e) => {
-                    return (
-                      <Tilt
-                        glareEnable={true}
-                        glarePosition={"all"}
-                        className="card"
-                        key={e.id}
-                      >
-                        <Link to="/workout">
-                          <img src={e.image} alt="" />
-                          <h2>{e.title}</h2>
-                          <div className="rating">
-                            <AiFillStar className="star" color="#ff385c" />
-                            <AiFillStar className="star" color="#ff385c" />
-                            <AiFillStar className="star" color="#ff385c" />
-                          </div>
-                        </Link>
-                      </Tilt>
-                    );
+                {data &&
+                  data.map((e, i) => {
+                    return <Workouts starCount={3} key={i} />;
                   })}
               </div>
             </div>

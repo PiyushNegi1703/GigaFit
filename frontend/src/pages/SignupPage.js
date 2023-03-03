@@ -7,7 +7,7 @@ import { useState } from "react";
 import { HashLoader } from "react-spinners";
 import { useSignup } from "../hooks/useSignup";
 
-const LoginPage = () => {
+const SignupPage = () => {
   // Defing constants to use in functions
   const [loading, setLoading] = useState(true);
   const [username, setUsername] = useState("");
@@ -107,4 +107,4 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage;
+export default SignupPage;
