@@ -19,7 +19,7 @@ const Home = () => {
 
   useEffect(() => {
     const fetchWorkouts = async () => {
-      const response = await fetch(`${process.env.API}/workouts/`);
+      const response = await fetch(`${process.env.REACT_APP_API}/workouts/`);
       const json = await response.json();
 
       console.log(json)
