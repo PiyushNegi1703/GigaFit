@@ -5,7 +5,14 @@ import { AiFillLinkedin } from "react-icons/ai";
 const Footer = () => {
   return (
     <>
-      <div style={{ width: "100%", display: "flex", justifyContent: "center" }}>
+      <div
+        style={{
+          marginTop: "5vh",
+          width: "100%",
+          display: "flex",
+          justifyContent: "center",
+        }}
+      >
         <hr style={{ width: "90%", border: "1px solid #363636" }} />
       </div>
       <footer

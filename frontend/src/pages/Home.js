@@ -10,7 +10,6 @@ import { HashLoader } from "react-spinners";
 import { useWorkoutContext } from "../hooks/useWorkoutContext";
 import { useAuthContext } from "../hooks/useAuthContext";
 import Workouts from "../components/Workouts";
-import data from "../data/data";
 
 const Home = () => {
   const { workouts, dispatch } = useWorkoutContext();
@@ -48,7 +47,7 @@ const Home = () => {
       ) : (
         <>
           <Navbar />
-          <div className="home">
+          <div className="home" style={{marginTop: '10vh'}}>
             <div
               className="suggestion"
               style={{
@@ -94,28 +93,25 @@ const Home = () => {
             {/* WORKOUTS CONTAINER */}
             <div className="workouts" style={{ marginBottom: "5vh" }}>
               {/* BEGINNER WORKOUTS */}
-              <h1 style={{ margin: "2vh 0 2vh 7%" }}>Beginner Workouts</h1>
+              <h1 style={{ margin: "2vh 0 2vh 7%", zIndex: '1' }}>Beginner Workouts</h1>
               <div className="card-container">
-                {data &&
-                  data.map((e, i) => {
-                    return <Workouts starCount={1} key={i} />;
+                {workouts && workouts[0].workout1.data.map((e) => {
+                    return <Workouts starCount={1} key={e.id} title={e.title} image={e.image} id={e.id} />;
                   })}
               </div>
 
               {/* INTERMEDIATE WORKOUTS */}
-              <h1 style={{ margin: "2vh 0 2vh 7%" }}>Intermediate Workouts</h1>
+              <h1 style={{ margin: "2vh 0 2vh 7%", zIndex: '1' }}>Intermediate Workouts</h1>
               <div className="card-container">
-                {data &&
-                  data.map((e, i) => {
-                    return <Workouts starCount={2} key={i} />;
+                {workouts && workouts[0].workout2.data.map((e) => {
+                    return <Workouts starCount={2} key={e.id} title={e.title} image={e.image} id={e.id} />;
                   })}
               </div>
               {/* ADVANCED WORKOUTS */}
-              <h1 style={{ margin: "2vh 0 2vh 7%" }}>Advanced Workouts</h1>
+              <h1 style={{ margin: "2vh 0 2vh 7%", zIndex: '1' }}>Advanced Workouts</h1>
               <div className="card-container">
-                {data &&
-                  data.map((e, i) => {
-                    return <Workouts starCount={3} key={i} />;
+                {workouts && workouts[0].workout3.data.map((e) => {
+                    return <Workouts starCount={3} key={e.id} title={e.title} image={e.image} id={e.id} />;
                   })}
               </div>
             </div>

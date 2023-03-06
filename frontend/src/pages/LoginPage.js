@@ -90,7 +90,7 @@ const LoginPage = () => {
                 </button>
             </form>
 
-            <p style={{ fontSize: "0.9em" }}>
+            <p style={{ fontSize: "0.9em", marginTop: '1vh' }}>
               Don't have an account?{" "}
               <Link to="/signup" className="register">
                 Sign up

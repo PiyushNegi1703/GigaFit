@@ -16,10 +16,6 @@ body,
   background-color: black;
 }
 
-.home {
-  margin-top: 10vh;
-}
-
 a {
   text-decoration: none;
   color: white;
@@ -211,13 +207,14 @@ form button {
   border-left: 1px solid rgba(255, 255, 255, 0.5);
   transition: all 0.3s;
   cursor: pointer;
+  text-align: center;
 }
 
 .card:hover {
   scale: 1.05;
 }
 
-a img {
+.card img {
   position: absolute;
   left: -20%;
   top: 0;
@@ -241,7 +238,7 @@ nav {
   top: 0;
   width: 100%;
   z-index: 1;
-  background-color: #000000;
+  background-color: #00000000;
   transition: all 0.5s;
 }
 
@@ -268,13 +265,10 @@ nav {
   align-items: center;
   overflow: hidden;
   background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
   color: #fff;
   border-top: 1px solid rgba(255, 255, 255, 0.2);
   border-left: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.exercise-container img {
-  filter: invert(1);
 }
 
 /* GENDER PAGE */
