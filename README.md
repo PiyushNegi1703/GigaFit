@@ -28,6 +28,9 @@ PR#5
 PR#13
 15. Authentication - PR link - https://github.com/kalviumcommunity/GigaFit/pull/13
 
+PR#14
+16. Events in NodeJS - PR link - https://github.com/kalviumcommunity/GigaFit/pull/14
+
 Other libraries used -
 1. dotenv - PR link - https://github.com/kalviumcommunity/GigaFit/pull/3
 2. react-icons - PR link - https://github.com/kalviumcommunity/GigaFit/pull/4
