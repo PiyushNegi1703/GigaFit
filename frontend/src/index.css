@@ -1,7 +1,7 @@
-/* Importing the fon 'INTER' */
+/*>>>>>>>>>>>>>>>>>>>>>>>>> Importing the fon 'INTER' <<<<<<<<<<<<<<<<<<<<*/
 @import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
 
-/* Global Styles */
+/*>>>>>>>>>>>>>>>>>>>>>>>>> Global Styles <<<<<<<<<<<<<<<<<<<<<<<<<<*/
 * {
   margin: 0;
   padding: 0;
@@ -22,7 +22,7 @@ a {
   text-align: center;
 }
 
-/* BUTTON */
+/*>>>>>>>>>>>>>>>>>>>>>>>>>>> BUTTON <<<<<<<<<<<<<<<<<<<<<<<<<<<*/
 
 button {
   background-color: #ca0024;
@@ -44,7 +44,7 @@ button:hover {
   background-color: #ff385c;
 }
 
-/* LOGIN & SIGNUP PAGE */
+/*>>>>>>>>>>>>>>>>>>>>>>>>> LOGIN & SIGNUP PAGE <<<<<<<<<<<<<<<<<<<<<<*/
 .login-page {
   width: 100%;
   display: flex;
@@ -154,7 +154,7 @@ form button {
   height: 130%;
 }
 
-/* HOME PAGE */
+/*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> HOME PAGE <<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
 .suggestion-card {
   display: flex;
   justify-content: center;
@@ -180,7 +180,7 @@ form button {
   mix-blend-mode: overlay;
 }
 
-/* Default Cards */
+/*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> DEFAULT CARDS <<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
 .card-container {
   display: flex;
   justify-content: center;
@@ -227,7 +227,7 @@ form button {
   font-size: 1.5em;
 }
 
-/* NAVBAR */
+/*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> NAVBAR <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
 nav {
   height: 10vh;
   display: flex;
@@ -247,7 +247,7 @@ nav {
   background-color: #ca0024;
 }
 
-/* EXERCISES */
+/*>>>>>>>>>>>>>>>>>>>>>>>>>>> EXERCISES <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
 .exercise-wrapper {
   width: 100%;
   display: flex;
@@ -271,7 +271,7 @@ nav {
   border-left: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* GENDER PAGE */
+/*>>>>>>>>>>>>>>>>>>>>>>>>>> GENDER PAGE <<<<<<<<<<<<<<<<<<<<<<<<<<<*/
 #male,
 #female {
   width: 50%;
