@@ -19,9 +19,7 @@ const app = express();
 const port = process.env.PORT || 900;
 
 // Using Cors
-app.use(cors({
-  origin: ["http://localhost:3000", "https://gigafit.onrender.com"]
-}));
+app.use(cors());
 // Using express
 app.use(express.json());
 
