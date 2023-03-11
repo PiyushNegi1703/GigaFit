@@ -49,17 +49,10 @@ const LoginPage = () => {
       ) : (
         <>
           <div className="form-container">
-            <h1 style={{ fontSize: "3em" }}>Register Yourself</h1>
-            <p>Please fill in all the fields to continue</p>
+            <h1>Welcome Back!</h1>
+            <p>Please log into your account</p>
 
-            <form
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                marginTop: "5vh",
-              }}
-              onSubmit={handleSubmit}
-            >
+            <form onSubmit={handleSubmit}>
               <div className="inputBox">
                 <input
                   type="email"
@@ -82,12 +75,12 @@ const LoginPage = () => {
               </div>
               {error && <div className="error">{error}</div>}
               <button type="submit" disabled={isLoading} style={{marginTop: '7vh'}}>Login</button>
-                <button className="google" disabled={isLoading}>
-                  <FcGoogle
-                    style={{ fontSize: "1.5em", marginRight: "20px" }}
-                  />
-                  Continue with Google
-                </button>
+              <button className="google" disabled={isLoading}>
+                <FcGoogle
+                  style={{ fontSize: "1.5em", marginRight: "20px" }}
+                />
+                Continue with Google
+              </button>
             </form>
 
             <p style={{ fontSize: "0.9em", marginTop: '1vh' }}>

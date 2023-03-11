@@ -52,16 +52,7 @@ const GenderPage = () => {
   }
 
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "space-around",
-        alignItems: "center",
-        width: "100%",
-        height: "100vh",
-      }}
-    >
+    <div className="gender-page">
       {loading ? (
         <div className="loader">
           <HashLoader color="#ca0024" size={80} />
@@ -72,20 +63,8 @@ const GenderPage = () => {
             <h1>What is Your Gender?</h1>
           </div>
 
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "space-around",
-              width: "100%",
-            }}
-          >
-            <div
-              style={{
-                width: "50%",
-                display: "flex",
-                justifyContent: "flex-end",
-              }}
-            >
+          <div className="gender-wrapper">
+            <div className="male-container">
               <img
                 src={maleImg}
                 alt="male"
@@ -93,7 +72,7 @@ const GenderPage = () => {
                 id="male"
               />
             </div>
-            <div style={{ width: "50%", display: "flex" }}>
+            <div className="female-container">
               <img
                 src={femaleImg}
                 onClick={() => femalelogic()}
@@ -103,7 +82,7 @@ const GenderPage = () => {
             </div>
           </div>
 
-          <div>
+          <div className="button-wrapper">
             <Link to="/home">
               <button
                 id="genderbutton"

@@ -15,16 +15,9 @@ const Footer = () => {
       >
         <hr style={{ width: "90%", border: "1px solid #363636" }} />
       </div>
-      <footer
-        style={{
-          height: "15vh",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-evenly",
-        }}
-      >
-        <div style={{ width: "50%" }}>
-          <img src={footerImg} alt="" style={{ width: "30%" }} />
+      <footer>
+        <div style={{width: "50%"}}>
+          <img src={footerImg} alt="" />
         </div>
         {/* <div> */}
         <h3 style={{ fontSize: "1.2em" }}>
@@ -34,14 +27,14 @@ const Footer = () => {
             rel="noreferrer"
             target="_blank"
           >
-            <AiFillGithub href="" fontSize="1.4em" />
+            <AiFillGithub href="" fontSize="1.2em" />
           </a>{" "}
           <a
             href="https://www.linkedin.com/in/negi-2k05/"
             rel="noreferrer"
             target="_blank"
           >
-            <AiFillLinkedin href="" fontSize="1.4em" />
+            <AiFillLinkedin href="" fontSize="1.2em" />
           </a>
         </h3>
         {/* </div> */}

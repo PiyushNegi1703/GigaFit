@@ -27,7 +27,7 @@ const Navbar = () => {
 
   return (
     <nav className={navbar ? "active" : ""}>
-      <img src={navbarLogo} alt="logo" width={"20%"} />
+      <img src={navbarLogo} alt="logo" />
       <CgProfile style={{ fontSize: "2em" }} />
     </nav>
   );
