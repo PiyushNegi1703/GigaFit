@@ -40,4 +40,4 @@ Other libraries used -
 6. react-spinners - PR link - https://github.com/kalviumcommunity/GigaFit/pull/13
 
 
-REACT APP DEPLOYED - https://giga-fit.netlify.app/
+REACT APP DEPLOYED - https://gigafit-q2q0.onrender.com

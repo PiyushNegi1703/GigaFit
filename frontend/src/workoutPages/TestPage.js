@@ -50,39 +50,22 @@ const TestPage = () => {
       ) : (
         <>
           <Navbar />
-          <div className="testPage" style={{ marginTop: "10vh" }}>
-            <div
-              style={{
-                width: "100%",
-                height: "40vh",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                position: "relative",
-              }}
-            >
+          <div className="workout-page" style={{ marginTop: "10vh" }}>
+            <div className="workout-title">
               <img
                 src={image}
                 alt="background"
-                style={{
-                  width: "90%",
-                  position: "absolute",
-                  top: "-110%",
-                  left: "5%",
-                  mixBlendMode: "hard-light",
-                  zIndex: "-1"
-                }}
               />
 
-              <h1 style={{ zIndex: "0", fontSize: "4em" }}>{workouts.title}</h1>
+              <h1>{workouts.title}</h1>
             </div>
 
             <div className="exercise-wrapper">
               {workouts && workouts.workouts.map((e, i) => {
                 return (
                   <div className="exercise-container" key={i}>
-                      <h3 style={{ fontWeight: "500" }}>{e.title}</h3>
-                      <h4 style={{ fontWeight: "500" }}>{e.reps}</h4>
+                      <h3>{e.title}</h3>
+                      <h4>{e.reps}</h4>
                   </div>
                 );
               })}

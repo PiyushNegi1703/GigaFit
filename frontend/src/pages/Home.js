@@ -50,23 +50,8 @@ const Home = () => {
           <div className="home" style={{marginTop: '10vh'}}>
             <div
               className="suggestion"
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                justifyContent: "space-around",
-                height: "30vh",
-                marginTop: "5vh",
-              }}
             >
-              <h1
-                style={{
-                  color: "#fff",
-                  textDecoration: "underline solid 1px",
-                  textAlign: "center",
-                  textShadow: "0 0 15px #ca0024",
-                }}
-              >
+              <h1>
                 OUR SUGGESTION FOR YOU
               </h1>
 
@@ -80,10 +65,10 @@ const Home = () => {
               >
                 <Link to="/workout">
                   <img src={fullBody} alt="" />
-                  <h2 style={{ fontSize: "2em", letterSpacing: "2px" }}>
+                  <h2>
                     Full Body Workout Challenge
                   </h2>
-                  <h4 style={{ fontSize: "1.2em", letterSpacing: "2px" }}>
+                  <h4>
                     4 days x 6 weeks
                   </h4>
                 </Link>
@@ -93,7 +78,7 @@ const Home = () => {
             {/* WORKOUTS CONTAINER */}
             <div className="workouts" style={{ marginBottom: "5vh" }}>
               {/* BEGINNER WORKOUTS */}
-              <h1 style={{ margin: "2vh 0 2vh 7%", zIndex: '1' }}>Beginner Workouts</h1>
+              <h1>Beginner Workouts</h1>
               <div className="card-container">
                 {workouts && workouts[0].workout1.data.map((e) => {
                     return <Workouts starCount={1} key={e.id} title={e.title} image={e.image} id={e.id} />;
@@ -101,14 +86,14 @@ const Home = () => {
               </div>
 
               {/* INTERMEDIATE WORKOUTS */}
-              <h1 style={{ margin: "2vh 0 2vh 7%", zIndex: '1' }}>Intermediate Workouts</h1>
+              <h1>Intermediate Workouts</h1>
               <div className="card-container">
                 {workouts && workouts[0].workout2.data.map((e) => {
                     return <Workouts starCount={2} key={e.id} title={e.title} image={e.image} id={e.id} />;
                   })}
               </div>
               {/* ADVANCED WORKOUTS */}
-              <h1 style={{ margin: "2vh 0 2vh 7%", zIndex: '1' }}>Advanced Workouts</h1>
+              <h1>Advanced Workouts</h1>
               <div className="card-container">
                 {workouts && workouts[0].workout3.data.map((e) => {
                     return <Workouts starCount={3} key={e.id} title={e.title} image={e.image} id={e.id} />;

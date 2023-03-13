@@ -42,15 +42,10 @@ const SignupPage = () => {
           </div>
 
           <div className="form-container">
-            <h1 style={{ fontSize: "3em" }}>Register Yourself</h1>
+            <h1>Register Yourself</h1>
             <p>Please fill in all the fields to continue</p>
 
             <form
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                marginTop: "5vh",
-              }}
               onSubmit={handleSubmit}
             >
             <div className="inputBox">

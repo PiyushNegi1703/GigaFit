@@ -1,7 +1,7 @@
-/* Importing the fon 'INTER' */
+/*>>>>>>>>>>>>>>>>>>>>>>>>> Importing the fon 'INTER' <<<<<<<<<<<<<<<<<<<<*/
 @import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
 
-/* Global Styles */
+/*>>>>>>>>>>>>>>>>>>>>>>>>> Global Styles <<<<<<<<<<<<<<<<<<<<<<<<<<*/
 * {
   margin: 0;
   padding: 0;
@@ -22,7 +22,7 @@ a {
   text-align: center;
 }
 
-/* BUTTON */
+/*>>>>>>>>>>>>>>>>>>>>>>>>>>> BUTTON <<<<<<<<<<<<<<<<<<<<<<<<<<<*/
 
 button {
   background-color: #ca0024;
@@ -44,7 +44,55 @@ button:hover {
   background-color: #ff385c;
 }
 
-/* LOGIN & SIGNUP PAGE */
+/*>>>>>>>>>>>>>>>>>>>>>>>>> LANDING PAGE <<<<<<<<<<<<<<<<<<<<<<*/
+
+.background-image{
+  position: absolute;
+  width: 100%;
+  height: 832px;
+  left: 0px;
+  top: -55px;
+  mix-blend-mode: hard-light;
+}
+
+.logo-container {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 70vh;
+  background-color: transparent;
+}
+
+.logo-container img {
+  width: 30vw;
+  height: 12vh;
+}
+
+.text-container {
+  width: 100%;
+  position: absolute;
+  top: 83vh;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.5em;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  font-weight: 700;
+}
+
+.button-container {
+  width: 100%;
+  height: 55px;
+  position: absolute;
+  top: 92vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*>>>>>>>>>>>>>>>>>>>>>>>>> LOGIN & SIGNUP PAGE <<<<<<<<<<<<<<<<<<<<<<*/
 .login-page {
   width: 100%;
   display: flex;
@@ -60,7 +108,14 @@ button:hover {
   height: 100vh;
 }
 
+.form-container h1 {
+  font-size: 3em;
+}
+
 form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5vh;
   position: relative;
   gap: 3vh;
 }
@@ -154,7 +209,26 @@ form button {
   height: 130%;
 }
 
-/* HOME PAGE */
+/*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> HOME PAGE <<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
+.suggestion {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 30vh;
+  margin-top: 5vh;
+}
+
+.suggestion h2 {
+  font-size: 2em;
+  letter-spacing: 2px;
+}
+
+.suggestion h4 {
+  font-size: 1.2em;
+  letter-spacing: 2px;
+}
+
 .suggestion-card {
   display: flex;
   justify-content: center;
@@ -180,7 +254,17 @@ form button {
   mix-blend-mode: overlay;
 }
 
-/* Default Cards */
+.suggestion h1 {
+  color: #fff;
+  text-decoration: underline solid 1px;
+  text-align: center;
+  text-shadow: 0 0 15px #ca0024;
+}
+
+.workouts h1 {
+  margin: 2vh 0 2vh 7%;
+}
+
 .card-container {
   display: flex;
   justify-content: center;
@@ -227,7 +311,7 @@ form button {
   font-size: 1.5em;
 }
 
-/* NAVBAR */
+/*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> NAVBAR <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
 nav {
   height: 10vh;
   display: flex;
@@ -242,36 +326,64 @@ nav {
   transition: all 0.5s;
 }
 
+nav img {
+  width: 20%;
+}
+
 .active {
   box-shadow: 10px 10px 20px #161616;
   background-color: #ca0024;
 }
 
-/* EXERCISES */
-.exercise-wrapper {
-  width: 100%;
+/*>>>>>>>>>>>>>>>>>>>>>>>>>>> FOOTER <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
+footer {
+  height: 15vh;
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.exercise-container {
-  margin-top: 2vh;
-  display: flex;
-  height: 8vh;
-  width: 60%;
-  justify-content: space-between;
-  padding: 20px;
   align-items: center;
-  overflow: hidden;
-  background-color: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  color: #fff;
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
-  border-left: 1px solid rgba(255, 255, 255, 0.2);
+  justify-content: space-evenly;
 }
 
-/* GENDER PAGE */
+footer div img {
+  width: 30%;
+}
+
+footer svg {
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+footer svg:hover {
+  scale: 1.2;
+}
+
+/*>>>>>>>>>>>>>>>>>>>>>>>>>> GENDER PAGE <<<<<<<<<<<<<<<<<<<<<<<<<<<*/
+.gender-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.gender-wrapper {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.male-container {
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.female-container {
+  width: 50%;
+  display: flex;
+  justify-content: flex-start;
+}
+
 #male,
 #female {
   width: 50%;
@@ -306,15 +418,7 @@ nav {
   background-color: #ca0025f5;
 }
 
-footer svg {
-  cursor: pointer;
-  transition: all 0.2s;
-}
-
-footer svg:hover {
-  scale: 1.2;
-}
-
+/*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> SOME EXTRA COMPONENTS <<<<<<<<<<<<<<<<<<<<<<*/
 .loader {
   width: 100%;
   height: 100vh;
@@ -334,4 +438,306 @@ div.error {
 
 input.error {
   border: 1px solid #ca0024;
+}
+
+/*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> WORKOUT PAGE <<<<<<<<<<<<<<<<<<<<<<<*/
+.workout-page div img {
+  width: 90%;
+  position: absolute;
+  top: -110%;
+  left: 5%;
+  mix-blend-mode: hard-light;
+  z-index: -1;
+}
+
+.workout-title {
+  width: 100%;
+  height: 40vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.workout-page div h1 {
+  font-size: 4em;
+}
+
+.exercise-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.exercise-container {
+  margin-top: 2vh;
+  display: flex;
+  height: 8vh;
+  width: 60%;
+  justify-content: space-between;
+  padding: 20px;
+  align-items: center;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  color: #fff;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+
+.exercise-container h3,
+.exercise-container h4 {
+  font-weight: 500;
+}
+
+/*>>>>>>>>>>>>>>>>>>>>>>>>>>> RESPONSIVE <<<<<<<<<<<<<<<<<<<<<<<*/
+@media screen and (max-width: 600px) {
+
+  /*>>>>>>>>>>>>>>>>>>>>>>>>>> LANDING PAGE <<<<<<<<<<<<<<<<<<<<<<<<*/
+  .background-image{
+    content: url("./assets/login\ mobile.png");
+    height: 90vh;
+  }
+
+  .logo-container img {
+    width: 70vw;
+    height: 10vh;
+  }
+
+  .text-container {
+    top: 82vh;
+    font-size: 1em;
+    font-weight: 500;
+  }
+
+  .text-container p {
+    width: 87%;
+  }
+
+  .button-container {
+    top: 91vh;
+    width: 100%;
+  }
+
+  .button-container a {
+    width: 80%;
+  }
+
+  button, form button {
+    width: 80%;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+  }
+
+  /*>>>>>>>>>>>>>>>>>>>>>>>>>>> LOGIN & SIGNUP PAGE <<<<<<<<<<<<<<<<<<<<<<<<<<<*/
+  .form-container {
+    width: 100%;
+    height: 80vh;
+    margin-top: 10vh;
+    justify-content: flex-start;
+  }
+
+  form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .inputBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+
+  .inputBox input {
+    width: 80%;
+    padding: 15px;
+    border-radius: 20px;
+  }
+
+  .inputBox input:valid ~ span,
+  .inputBox input:focus-visible ~ span
+  {
+    transform: translateX(20px) translateY(-25px);
+    font-size: 0.5em;
+  }
+
+  .inputBox span {
+    left: 30px;
+    font-size: 0.8em;
+  }
+
+  .form-container h1 {
+    font-size: 2em;
+  }
+
+  .login-image {
+    display: none;
+  }
+
+  /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> NAVBAR <<<<<<<<<<<<<<<<<<<<<<<<*/
+  nav {
+    height: 6vh;
+  }
+
+  nav img {
+    width: 50%;
+  }
+
+  /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> HOME PAGE <<<<<<<<<<<<<<<<<<<<<*/
+  .suggestion {
+    height: 20vh;
+  }
+
+  .suggestion h1 {
+    font-size: 1.5em;
+  }
+
+  .suggestion-card {
+    width: 80%;
+    height: 10vh;
+  }
+
+  .suggestion h2 {
+    font-size: 1em;
+    letter-spacing: 1px;
+  }
+  
+  .suggestion h4 {
+    font-size: 1em;
+    letter-spacing: 1px;
+  }
+
+  .workouts h1 {
+    text-align: center;
+    margin: 7vh 0 2vh 0;
+    font-size: 1.5em;
+  }
+
+  .card-container {
+    gap: 3vh;
+  }
+
+  .card {
+    width: 80%;
+    height: 10vh;
+    padding: 10px;
+    font-size: 0.8em;
+  }
+
+  .card img {
+    top: -120%;
+    width: 100%;
+    left: 0;
+    opacity: 0.5;
+  }
+
+  .card:nth-child(3) img, .card:nth-child(5) img {
+    top: -180%;
+  }
+
+  /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> FOOTER <<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
+  footer {
+    height: 7vh;
+    width: 95%;
+  }
+
+  footer div img {
+    width: 70%;
+  }
+
+  /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> WORKOUT PAGE <<<<<<<<<<<<<<<<<<<<<<<*/
+  .workout-page div img {
+    content: url("./assets/login\ mobile\ 3.png");
+    width: 100%;
+    left: 0;
+    top: -120%;
+    mix-blend-mode: hard-light;
+    opacity: 0.5;
+  }
+
+  .workout-page div h1 {
+    font-size: 3em;
+  }
+
+  .exercise-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .exercise-container {
+    width: 80%;
+    backdrop-filter: blur(40px);
+  }
+
+  .exercise-container h3,
+  .exercise-container h4 {
+    font-size: 1em;
+    font-weight: 400;
+  }
+
+  .workout-title {
+    width: 100%;
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+
+  /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> GENDER PAGE <<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
+  .gender-wrapper {
+    height: 30vh;
+  }
+  
+  .button-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .button-wrapper a {
+    width: 80%;
+  }
+
+  #male,
+  #female {
+    width: 100%;
+    transition: 0.5s;
+  }
+  
+  .femaleselcss {
+    scale: 1.2;
+    filter: drop-shadow(0px 1px 12px #d600ff);
+  }
+  
+  .maleselcss {
+    scale: 1.2;
+    filter: drop-shadow(0px 1px 12px #4b00ff);
+  }
+  
+  .maleunselcss {
+    opacity: 50%;
+  }
+  .femaleunselcss {
+    opacity: 50%;
+  }
+  
+  .disabled {
+    opacity: 0.5;
+  }
+  
+  .disabled:hover {
+    scale: 1;
+    font-size: 1.2em;
+    cursor: auto;
+    background-color: #ca0025f5;
+  }
 }
