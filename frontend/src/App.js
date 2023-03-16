@@ -7,6 +7,7 @@ import LandingPage from "./pages/LandingPage";
 import LoginPage from "./pages/LoginPage";
 import SignupPage from "./pages/SignupPage";
 import TestPage from "./workoutPages/TestPage";
+import SuggestedPage from "./workoutPages/SuggestedPage";
 
 function App() {
   const { user } = useAuthContext();
@@ -27,8 +28,18 @@ function App() {
           path="/home"
           element={user ? <Home /> : <Navigate to="/login" />}
         />
-        <Route path="/gender" element={<GenderPage />} />
-        <Route path="/workout" element={<TestPage />} />
+        <Route
+          path="/gender"
+          element={user ? <GenderPage /> : <Navigate to="/login" />}
+        />
+        <Route
+          path="/workout"
+          element={user ? <TestPage /> : <Navigate to="/login" />}
+        />
+        <Route
+          path="/suggested"
+          element={user ? <SuggestedPage /> : <Navigate to="/login" />}
+        />
       </Routes>
     </BrowserRouter>
   );

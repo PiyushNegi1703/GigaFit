@@ -63,7 +63,7 @@ const Home = () => {
                 tiltMaxAngleY={10}
                 className="suggestion-card"
               >
-                <Link to="/workout">
+                <Link to="/suggested">
                   <img src={fullBody} alt="" />
                   <h2>
                     Full Body Workout Challenge
