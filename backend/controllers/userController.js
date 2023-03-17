@@ -54,8 +54,7 @@ async function verifyToken(token) {
 
 // Google Auth
 
-const googleAuth = async (req,res)=>{
-
+const googleAuth = async (req, res) => {
   const { token } = req.body;
   console.log(token);
   if (!token) {
@@ -65,11 +64,11 @@ const googleAuth = async (req,res)=>{
 
   const userexist = await User.findOne({ email: user.email });
 
-// Checking if user exists
+  // Checking if user exists
 
   if (userexist) {
-    const {_id,username , email } = userexist;
-    const token = createToken(userexist._id)
+    const { _id, username, email } = userexist;
+    const token = createToken(userexist._id);
     res.json({ username, email, token });
   } else {
     const newuser = await new User({
@@ -78,16 +77,15 @@ const googleAuth = async (req,res)=>{
       username: user.name,
       isGoogleUser: true,
     });
-    newuser.save();
+    await newuser.save();
 
     const googleuser = await User.findOne({ email: user.email });
-    
-    const { _id,username , email } = googleuser;
-    const token = createToken(googleuser._id);
-    res.json({ username, email, token  });
-  }
 
-}
+    const { _id, username, email } = googleuser;
+    const token = createToken(googleuser._id);
+    res.json({ username, email, token });
+  }
+};
 
 // Exporting signing and loggin functions
 module.exports = { signupUser, loginUser, googleAuth };
