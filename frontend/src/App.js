@@ -8,6 +8,7 @@ import LoginPage from "./pages/LoginPage";
 import SignupPage from "./pages/SignupPage";
 import TestPage from "./workoutPages/TestPage";
 import SuggestedPage from "./workoutPages/SuggestedPage";
+import Googleauth from "./pages/Googleauth";
 
 function App() {
   const { user } = useAuthContext();
@@ -39,6 +40,10 @@ function App() {
         <Route
           path="/suggested"
           element={user ? <SuggestedPage /> : <Navigate to="/login" />}
+        />
+         <Route
+          path="/googleauth"
+          element={<Googleauth/>}
         />
       </Routes>
     </BrowserRouter>
