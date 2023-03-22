@@ -4,7 +4,7 @@ import { useLogin } from "../hooks/useLogin";
 import image from "../assets/legs red.png";
 // Google icon imported from react-icons
 import { FcGoogle } from "react-icons/fc";
-import { Link, Navigate } from "react-router-dom";
+import { Link, Navigate,useNavigate } from "react-router-dom";
 import { HashLoader } from "react-spinners";
 
 const LoginPage = () => {
@@ -12,13 +12,13 @@ const LoginPage = () => {
   const [loading, setLoading] = useState(true);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
+  const navigate = useNavigate()
   // Taking constants from useLogin
   const { login, error, isLoading } = useLogin();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+   
     if (isLoading === false) {
       <Navigate to="/gender" />;
     }
@@ -75,7 +75,9 @@ const LoginPage = () => {
               </div>
               {error && <div className="error">{error}</div>}
               <button type="submit" disabled={isLoading} style={{marginTop: '7vh'}}>Login</button>
-              <button className="google" disabled={isLoading}>
+              <button className="google" onClick={()=>{
+                navigate('/googleauth')
+              }} disabled={isLoading}>
                 <FcGoogle
                   style={{ fontSize: "1.5em", marginRight: "20px" }}
                 />
