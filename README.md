@@ -35,9 +35,10 @@ Other libraries used -
 1. dotenv - PR link - https://github.com/kalviumcommunity/GigaFit/pull/3
 2. react-icons - PR link - https://github.com/kalviumcommunity/GigaFit/pull/4
 3. bcrypt - PR link - https://github.com/kalviumcommunity/GigaFit/pull/5
-4. Material UI - PR link - https://github.com/kalviumcommunity/GigaFit/pull/13
-5. react-parallax-tilt - PR link - https://github.com/kalviumcommunity/GigaFit/pull/13
-6. react-spinners - PR link - https://github.com/kalviumcommunity/GigaFit/pull/13
+4. jwt - PR link - https://github.com/kalviumcommunity/GigaFit/pull/5
+5. Material UI - PR link - https://github.com/kalviumcommunity/GigaFit/pull/13
+6. react-parallax-tilt - PR link - https://github.com/kalviumcommunity/GigaFit/pull/13
+7. react-spinners - PR link - https://github.com/kalviumcommunity/GigaFit/pull/13
 
 
 REACT APP DEPLOYED - https://gigafit-q2q0.onrender.com
