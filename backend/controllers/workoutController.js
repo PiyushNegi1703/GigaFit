@@ -33,14 +33,8 @@ const newWorkout = async (req, resp) => {
 
   let emptyFields = [];
 
-  if (!workout1) {
-    emptyFields.push("workout1");
-  }
-  if (!workout2) {
-    emptyFields.push("workout2");
-  }
-  if (!workout3) {
-    emptyFields.push("workout3");
+  if (!workout1 || !workout2 || !workout3) {
+    emptyFields.push("error");
   }
 
   if (emptyFields.length > 0) {

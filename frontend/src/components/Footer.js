@@ -20,7 +20,7 @@ const Footer = () => {
           <img src={footerImg} alt="" />
         </div>
         {/* <div> */}
-        <h3 style={{ fontSize: "1.2em" }}>
+        <h3 style={{ fontSize: "1.1em" }}>
           Social Media -{" "}
           <a
             href="https://github.com/PiyushNegi1703/"

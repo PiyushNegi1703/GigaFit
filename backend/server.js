@@ -9,6 +9,8 @@ const cors = require("cors");
 // Importing routes
 const workoutRoutes = require("./routes/workout");
 const userRoutes = require("./routes/user");
+const fullBody = require('./routes/fullBodyWorkout')
+
 // Importing mongoose
 const mongoose = require("mongoose");
 
@@ -33,6 +35,7 @@ app.use((req, resp, next) => {
 // Routes
 app.use("/api/workouts", workoutRoutes);
 app.use("/api/user", userRoutes);
+app.use("/api/fullBody", fullBody);
 
 // Setting strictQuery to false to prevent error
 mongoose.set("strictQuery", false);

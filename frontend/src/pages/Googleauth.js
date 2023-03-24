@@ -1,5 +1,4 @@
-import { useEffect, useContext, useState } from "react";
-import jwt_decode from "jwt-decode";
+import { useEffect, useState } from "react";
 import { useAuthContext } from '../hooks/useAuthContext'
 import { useNavigate } from "react-router-dom";
 const Googleauth = () => {
@@ -11,7 +10,7 @@ const Googleauth = () => {
     /* global google */
 
     google.accounts.id.initialize({
-      client_id:"1078013588858-6bn9a11aogvv9t561i1c6ufvt1oqddrs.apps.googleusercontent.com",
+      client_id: process.env.REACT_APP_CLIENT_ID,
       callback: handleCredentialResponse,
     });
     google.accounts.id.renderButton(document.getElementById("signindiv"), {
@@ -38,7 +37,7 @@ const Googleauth = () => {
     console.log(jsondata)
     localStorage.setItem('user', JSON.stringify(jsondata))
 
-            // Update the Auth Context
+    // Update the Auth Context
     dispatch({type: 'LOGIN', payload: jsondata})
     setLoading(false)
     // console.log(state)
