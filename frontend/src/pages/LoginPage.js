@@ -77,7 +77,7 @@ const LoginPage = () => {
                 <span>Password</span>
               </div>
               {error && <div className="error">{error}</div>}
-              {buttonLoader?<HashLoader size={20}/>:<button type="submit" disabled={isLoading} style={{marginTop: '7vh',display:"flex",justifyContent:"center"}}> </button>} 
+              {buttonLoader?<HashLoader size={20}/>:<button type="submit" disabled={isLoading} style={{marginTop: '7vh',display:"flex",justifyContent:"center"}}>Login</button>} 
               <button className="google" onClick={()=>{
                 navigate('/googleauth')
               }} disabled={isLoading}>
