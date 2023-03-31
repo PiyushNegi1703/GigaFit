@@ -13,7 +13,6 @@ const fullBody = require('./routes/fullBodyWorkout')
 
 // Importing mongoose
 const mongoose = require("mongoose");
-const { default: SignupPage } = require("../frontend/src/pages/SignupPage");
 
 // Express App
 const app = express();
