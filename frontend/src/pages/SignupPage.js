@@ -2,7 +2,7 @@
 import image from "../assets/Legs 1 red.png";
 // Google icon imported from react-icons
 import { FcGoogle } from "react-icons/fc";
-import { Link, Navigate,useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { HashLoader } from "react-spinners";
 import { useSignup } from "../hooks/useSignup";

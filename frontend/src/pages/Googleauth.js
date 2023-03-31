@@ -35,7 +35,7 @@ const Googleauth = () => {
     const jsondata = await fetchdata.json();
     // console.log(jsondata);
     console.log(jsondata)
-    localStorage.setItem('user', JSON.stringify(jsondata))
+    sessionStorage.setItem('user', JSON.stringify(jsondata))
 
     // Update the Auth Context
     dispatch({type: 'LOGIN', payload: jsondata})

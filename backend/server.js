@@ -13,6 +13,7 @@ const fullBody = require('./routes/fullBodyWorkout')
 
 // Importing mongoose
 const mongoose = require("mongoose");
+const { default: SignupPage } = require("../frontend/src/pages/SignupPage");
 
 // Express App
 const app = express();
@@ -24,6 +25,9 @@ const port = process.env.PORT || 900;
 app.use(cors({
   origin: ["http://localhost:3000", "https://gigafit-q2q0.onrender.com"]
 }));
+
+// app.use(cors())
+
 // Using express
 app.use(express.json());
 
