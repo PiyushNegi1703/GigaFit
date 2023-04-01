@@ -12,19 +12,21 @@ const LoginPage = () => {
   const [loading, setLoading] = useState(true);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const[buttonLoader,setButtonLoader] = useState(false)
   const navigate = useNavigate()
   // Taking constants from useLogin
   const { login, error, isLoading } = useLogin();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setButtonLoader(true)
    
     if (isLoading === false) {
       <Navigate to="/gender" />;
     }
 
     await login(email, password);
-
+    setButtonLoader(false)
     if (error.includes('password')) {
       document.getElementById('password').style.border = '1px solid #ca0024'
     }
@@ -32,6 +34,7 @@ const LoginPage = () => {
     if (error.includes('Email')) {
       document.getElementById('password').style.border = '1px solid #ca0024'
     }
+    
   };
 
   if (loading) {
@@ -74,7 +77,7 @@ const LoginPage = () => {
                 <span>Password</span>
               </div>
               {error && <div className="error">{error}</div>}
-              <button type="submit" disabled={isLoading} style={{marginTop: '7vh'}}>Login</button>
+              {buttonLoader?<HashLoader size={20}/>:<button type="submit" disabled={isLoading} style={{marginTop: '7vh',display:"flex",justifyContent:"center"}}>Login</button>} 
               <button className="google" onClick={()=>{
                 navigate('/googleauth')
               }} disabled={isLoading}>

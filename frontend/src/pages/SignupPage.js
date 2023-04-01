@@ -2,7 +2,7 @@
 import image from "../assets/Legs 1 red.png";
 // Google icon imported from react-icons
 import { FcGoogle } from "react-icons/fc";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { HashLoader } from "react-spinners";
 import { useSignup } from "../hooks/useSignup";
@@ -12,15 +12,18 @@ const SignupPage = () => {
   const [loading, setLoading] = useState(true);
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
+  const[buttonLoader,setButtonLoader] = useState(false)
   const [password, setPassword] = useState("");
-
+  const navigate = useNavigate()
   // Taking constants from useSignup
   const { signup, error, isLoading } = useSignup();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setButtonLoader(true)
 
     await signup(username, email, password);
+    setButtonLoader(false)
   };
 
   if (loading) {
@@ -80,8 +83,10 @@ const SignupPage = () => {
                 <span>password</span>
               </div>
               {error && <div className="error">{error}</div>}
-                <button disabled={isLoading} style={{marginTop: '7vh'}}>Sign up</button>
-                <button className="google" disabled={isLoading}>
+               {buttonLoader?<HashLoader size={40}  color="#ca0024" />:<button disabled={isLoading} style={{marginTop: '7vh'}}>Sign up</button>} 
+                <button onClick={()=>{
+                navigate('/googleauth')
+              }} className="google" disabled={isLoading}>
                   <FcGoogle
                     style={{ fontSize: "1.5em", marginRight: "20px" }}
                   />
