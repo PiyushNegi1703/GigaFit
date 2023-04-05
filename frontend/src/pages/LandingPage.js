@@ -49,7 +49,7 @@ const LandingPage = () => {
             className="button-container"
           >
             <Link to="/login">
-              <button>Get Started</button>
+              <button className="button">Get Started</button>
             </Link>
           </div>
         </div>

@@ -48,7 +48,7 @@ async function verifyToken(token) {
     audience: process.env.GOOGLE_CLIENT_ID,
   });
   const payload = ticket.getPayload();
-  const user = { email: payload.email, name: payload.name };
+  const user = { email: payload.email, name: payload.name, picture: payload.picture };
   return user;
 }
 
@@ -56,34 +56,40 @@ async function verifyToken(token) {
 
 const googleAuth = async (req, res) => {
   const { token } = req.body;
-  console.log(token);
+  // console.log(token);
   if (!token) {
     res.status(402).json({ error: "token not found" });
   }
   const user = await verifyToken(token);
-
+// console.log(user.picture)
   const userexist = await User.findOne({ email: user.email });
 
   // Checking if user exists
 
   if (userexist) {
     const { _id, username, email } = userexist;
+   
+    const updtUser = await User.findByIdAndUpdate({_id : _id}, {pic: user.picture}, {new: true})
     const token = createToken(userexist._id);
-    res.json({ username, email, token });
+    const { pic } = updtUser;
+    console.log(pic);
+    res.json({ username, email, token, pic });
   } else {
     const newuser = await new User({
       email: user.email,
       password: "",
       username: user.name,
       isGoogleUser: true,
+      pic: user.picture
     });
     await newuser.save();
-
+    
     const googleuser = await User.findOne({ email: user.email });
-
-    const { _id, username, email } = googleuser;
+    console.log(googleuser.pic)
+    
+    const { _id, username, email, pic } = googleuser;
     const token = createToken(googleuser._id);
-    res.json({ username, email, token });
+    res.json({ username, email, pic, token });
   }
 };
 

@@ -2,10 +2,9 @@ import { useState } from "react";
 import { useLogin } from "../hooks/useLogin";
 // Image imported from assets
 import image from "../assets/legs red.png";
-// Google icon imported from react-icons
-import { FcGoogle } from "react-icons/fc";
-import { Link, Navigate,useNavigate } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { HashLoader } from "react-spinners";
+import Googleauth from "./Googleauth";
 
 const LoginPage = () => {
   // Defining constants to use in functions
@@ -13,7 +12,6 @@ const LoginPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const[buttonLoader,setButtonLoader] = useState(false)
-  const navigate = useNavigate()
   // Taking constants from useLogin
   const { login, error, isLoading } = useLogin();
 
@@ -77,15 +75,16 @@ const LoginPage = () => {
                 <span>Password</span>
               </div>
               {error && <div className="error">{error}</div>}
-              {buttonLoader?<HashLoader size={20}/>:<button type="submit" disabled={isLoading} style={{marginTop: '7vh',display:"flex",justifyContent:"center"}}>Login</button>} 
-              <button className="google" onClick={()=>{
+              {buttonLoader?<HashLoader size={20}/>:<button type="submit" className="button" disabled={isLoading} style={{marginTop: '7vh',display:"flex",justifyContent:"center"}}>Login</button>} 
+              {/* <button className="google" onClick={()=>{
                 navigate('/googleauth')
               }} disabled={isLoading}>
                 <FcGoogle
                   style={{ fontSize: "1.5em", marginRight: "20px" }}
                 />
                 Continue with Google
-              </button>
+              </button> */}
+              <Googleauth />
             </form>
 
             <p style={{ fontSize: "0.9em", marginTop: '1vh' }}>
