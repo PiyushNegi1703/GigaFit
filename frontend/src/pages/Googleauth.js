@@ -14,8 +14,10 @@ const Googleauth = () => {
       callback: handleCredentialResponse,
     });
     google.accounts.id.renderButton(document.getElementById("signindiv"), {
-      theme: "outline",
-      size: "xx-large",
+      theme: "dark",
+      width: "280px",
+      height: "100px",
+      size: "large",
     });
   });
 
@@ -45,18 +47,10 @@ const Googleauth = () => {
   }
 
   return (
-    <div
-      style={{
-        height: "100vh",
-        width: "100%",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        flexDirection:"column"
-      }}
-    > <h4>{loading===true?"Signing you in...":""}</h4>
+    <>
+      <h4>{loading===true?"Signing you in...":""}</h4>
       <div id="signindiv"></div>
-    </div>
+    </>
   );
 };
 

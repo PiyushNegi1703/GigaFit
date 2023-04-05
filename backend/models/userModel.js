@@ -27,7 +27,10 @@ const userSchema = new Schema({
   isGoogleUser:{
     type:Boolean,
     default:false
-}
+  },
+  pic: {
+    type:String,
+  }
 });
 
 // Setting Signup function
