@@ -6,134 +6,86 @@ const Schema = mongoose.Schema;
 const fullBodySchema = new Schema({
   week1: {
     day1: {
-      data: {
-        type: Array,
-      },
+        type: Array
     },
     day2: {
-      data: {
-        type: Array,
-      },
+        type: Array
     },
     day3: {
-      data: {
-        type: Array,
-      },
+        type: Array
     },
     day4: {
-      data: {
-        type: Array,
-      },
+        type: Array
     },
   },
   week2: {
     day1: {
-      data: {
-        type: Array,
-      },
+        type: Array
     },
     day2: {
-      data: {
-        type: Array,
-      },
+        type: Array
     },
     day3: {
-      data: {
-        type: Array,
-      },
+        type: Array
     },
     day4: {
-      data: {
-        type: Array,
-      },
+        type: Array
     },
   },
   week3: {
     day1: {
-      data: {
-        type: Array,
-      },
+        type: Array
     },
     day2: {
-      data: {
-        type: Array,
-      },
+        type: Array
     },
     day3: {
-      data: {
-        type: Array,
-      },
+        type: Array
     },
     day4: {
-      data: {
-        type: Array,
-      },
+        type: Array
     },
   },
   week4: {
     day1: {
-      data: {
-        type: Array,
-      },
+        type: Array
     },
     day2: {
-      data: {
-        type: Array,
-      },
+        type: Array
     },
     day3: {
-      data: {
-        type: Array,
-      },
+        type: Array
     },
     day4: {
-      data: {
-        type: Array,
-      },
+        type: Array
     },
   },
   week5: {
     day1: {
-      data: {
-        type: Array,
-      },
+        type: Array
     },
     day2: {
-      data: {
-        type: Array,
-      },
+        type: Array
     },
     day3: {
-      data: {
-        type: Array,
-      },
+        type: Array
     },
     day4: {
-      data: {
-        type: Array,
-      },
+        type: Array
     },
   },
   week6: {
     day1: {
-      data: {
-        type: Array,
-      },
+        type: Array
     },
     day2: {
-      data: {
-        type: Array,
-      },
+        type: Array
     },
     day3: {
-      data: {
-        type: Array,
-      },
+        type: Array
     },
     day4: {
-      data: {
-        type: Array,
-      },
+        type: Array
     },
   },
 });

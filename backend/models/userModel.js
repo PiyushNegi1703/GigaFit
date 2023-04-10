@@ -22,7 +22,6 @@ const userSchema = new Schema({
   },
   password: {
     type: String,
-    
   },
   isGoogleUser:{
     type:Boolean,
@@ -30,8 +29,11 @@ const userSchema = new Schema({
   },
   pic: {
     type:String,
+  },
+  value: {
+    type: Array,
   }
-});
+}, {timestamps: true});
 
 // Setting Signup function
 userSchema.statics.signup = async function (username, email, password) {

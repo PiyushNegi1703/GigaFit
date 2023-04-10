@@ -17,7 +17,7 @@ const newFullBody = async (req, resp) => {
     emptyFields.push("error");
   }
 
-  if (emptyFields.length() > 0) {
+  if (emptyFields.length > 0) {
     return resp.status(400).json({ error: "Please fill in all the fields" });
   }
 
