@@ -24,8 +24,6 @@ let year = date.getFullYear();
 
 let currentDate = `${year}/0${month}/0${day}`
 
-console.log(currentDate)
-
 const Profile = () => {
   const { user } = useAuthContext();
 

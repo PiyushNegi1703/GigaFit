@@ -4,44 +4,106 @@ import Navbar from "../components/Navbar";
 import { useState } from "react";
 import { HashLoader } from "react-spinners";
 import { useAuthContext } from "../hooks/useAuthContext";
-// import { useLocation } from "react-router-dom";
 import Footer from "../components/Footer";
+import { useLocation } from "react-router-dom";
 
 const TestPage = () => {
   const [loading, setLoading] = useState(true);
-  const [workouts, setWorkouts] = useState({});
-//   const location = useLocation()
+  const [workouts, setWorkouts] = useState([]);
+  const location = useLocation()
   const { user } = useAuthContext();
 
   useEffect(() => {
     const fetchWorkout = async () => {
-      const response = await fetch(`${process.env.REACT_APP_API}/workouts/`)
+      const response = await fetch(`${process.env.REACT_APP_API}/fullBody`)
       const json = await response.json();
       const data = await json[0]
       console.log(data)
-      setWorkouts(data.workout1.data[0])
-    //   if(location.state.workoutType === "workout1") {
-    //     data.workout1.data.filter(single => single.id === location.state.id).map(data => setWorkouts(data))
-    //   } else if (location.state.workoutType === "workout2") {
-    //     data.workout2.data.filter(single => single.id === location.state.id).map(data => setWorkouts(data))
-    //   } else if (location.state.workoutType === "workout3") {
-    //     data.workout3.data.filter(single => single.id === location.state.id).map(data => setWorkouts(data))
-    //   } else {
-    //     setWorkouts({})
-    //   }
+      if(location.state.id === "11") {
+        setWorkouts(data.week1.day1)
+      }
+      else if (location.state.id === "12") {
+        setWorkouts(data.week1.day2)
+      }
+      else if (location.state.id === "14") {
+        setWorkouts(data.week1.day3)
+      }
+      else if (location.state.id === "15") {
+        setWorkouts(data.week1.day4)
+      }
+      else if (location.state.id === "21") {
+        setWorkouts(data.week2.day1)
+      }
+      else if (location.state.id === "22") {
+        setWorkouts(data.week2.day2)
+      }
+      else if (location.state.id === "24") {
+        setWorkouts(data.week2.day3)
+      }
+      else if (location.state.id === "25") {
+        setWorkouts(data.week2.day4)
+      }
+      else if (location.state.id === "31") {
+        setWorkouts(data.week3.day1)
+      }
+      else if (location.state.id === "32") {
+        setWorkouts(data.week3.day2)
+      }
+      else if (location.state.id === "34") {
+        setWorkouts(data.week3.day3)
+      }
+      else if (location.state.id === "35") {
+        setWorkouts(data.week3.day4)
+      }
+      else if (location.state.id === "41") {
+        setWorkouts(data.week4.day1)
+      }
+      else if (location.state.id === "42") {
+        setWorkouts(data.week4.day2)
+      }
+      else if (location.state.id === "44") {
+        setWorkouts(data.week4.day3)
+      }
+      else if (location.state.id === "45") {
+        setWorkouts(data.week4.day4)
+      }
+      else if (location.state.id === "51") {
+        setWorkouts(data.week5.day1)
+      }
+      else if (location.state.id === "52") {
+        setWorkouts(data.week5.day2)
+      }
+      else if (location.state.id === "54") {
+        setWorkouts(data.week5.day3)
+      }
+      else if (location.state.id === "55") {
+        setWorkouts(data.week5.day4)
+      }
+      else if (location.state.id === "61") {
+        setWorkouts(data.week6.day1)
+      }
+      else if (location.state.id === "62") {
+        setWorkouts(data.week6.day2)
+      }
+      else if (location.state.id === "64") {
+        setWorkouts(data.week6.day3)
+      }
+      else if (location.state.id === "65") {
+        setWorkouts(data.week6.day4)
+      }
+      else {
+        setWorkouts({})
+      }
+
+      if(response.ok) {
+        setLoading(false);
+      }
     }
 
     if(user) {
       fetchWorkout()
     }
-  }, [user])
-
-
-  if (loading) {
-    setTimeout(() => {
-      setLoading(false);
-    }, 5000);
-  }
+  }, [location.state.id ,user])
 
   return (
     <>
@@ -63,7 +125,7 @@ const TestPage = () => {
             </div>
 
             <div className="exercise-wrapper">
-              {workouts && workouts.workouts.map((e, i) => {
+              {workouts && workouts.map((e, i) => {
                 return (
                   <div className="exercise-container" key={i}>
                       <h3>{e.title}</h3>

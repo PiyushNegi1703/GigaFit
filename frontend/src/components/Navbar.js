@@ -47,8 +47,6 @@ const Navbar = () => {
     window.addEventListener("scroll", changeBackground);
   });
 
-  console.log(location.pathname)
-
   return (
     <nav className={navbar ? "active" : ""}>
       <img
