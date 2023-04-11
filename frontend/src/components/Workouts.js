@@ -21,7 +21,6 @@ const Workouts = ({ starCount, image, title, id }) => {
       glareEnable={true}
       glarePosition={"all"}
       className="card"
-      // key={e.id}
     >
       <div onClick={handleClick}>
         <img src={image} alt="" />

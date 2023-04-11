@@ -543,8 +543,6 @@ input.error {
   backdrop-filter: blur(25px);
   font-size: 2em;
   width: 15vh;
-  /* background-color: white; */
-  /* color: #000; */
 }
 
 /*>>>>>>>>>>>>>>>>>>>>>>>>>>> RESPONSIVE <<<<<<<<<<<<<<<<<<<<<<<*/
