@@ -12,6 +12,7 @@
 body,
 .home {
   width: 100%;
+  height: 100vh;
   color: white;
   background-color: black;
 }
@@ -20,6 +21,10 @@ a {
   text-decoration: none;
   color: white;
   text-align: center;
+}
+
+.navbarLogo {
+  cursor: pointer;
 }
 
 /*>>>>>>>>>>>>>>>>>>>>>>>>>>> BUTTON <<<<<<<<<<<<<<<<<<<<<<<<<<<*/
@@ -490,10 +495,56 @@ input.error {
   border-left: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-
 .exercise-container h3,
 .exercise-container h4 {
   font-weight: 500;
+}
+
+.week-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding-top: 15vh;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.week-bg-img {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  /* height: 100vh; */
+  mix-blend-mode: hard-light;
+}
+
+.week-container {
+  width: 80%;
+  padding: 2vh;
+  border: 3px dashed rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(25px);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5vh;
+  justify-content: center;
+  margin-bottom: 2vh;
+}
+
+.week-container div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  height: 15vh;
+  background-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(25px);
+  font-size: 2em;
+  width: 15vh;
+  /* background-color: white; */
+  /* color: #000; */
 }
 
 /*>>>>>>>>>>>>>>>>>>>>>>>>>>> RESPONSIVE <<<<<<<<<<<<<<<<<<<<<<<*/
@@ -529,11 +580,11 @@ input.error {
     width: 80%;
   }
 
-  button, form button {
+  /* button, form button {
     width: 80%;
     font-size: 0.9em;
     letter-spacing: 1px;
-  }
+  } */
 
   /*>>>>>>>>>>>>>>>>>>>>>>>>>>> LOGIN & SIGNUP PAGE <<<<<<<<<<<<<<<<<<<<<<<<<<<*/
   .form-container {
