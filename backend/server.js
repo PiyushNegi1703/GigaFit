@@ -22,7 +22,7 @@ const port = process.env.PORT || 900;
 
 // Using Cors
 app.use(cors({
-  origin: ["http://localhost:3000", "https://gigafit.pages.dev"]
+  origin: ["http://localhost:3000", "https://gigafit.pages.dev", "https://gigafit-q2q0.onrender.com"]
 }));
 
 // app.use(cors())
