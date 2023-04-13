@@ -14,6 +14,7 @@ import Workouts from "../components/Workouts";
 const Home = () => {
   const { workouts, dispatch } = useWorkoutContext();
   const { user } = useAuthContext();
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchWorkouts = async () => {
@@ -22,6 +23,7 @@ const Home = () => {
 
       if (response.ok) {
         dispatch({ type: "SET_WORKOUTS", payload: json });
+        setLoading(false);
       }
     };
 
@@ -29,14 +31,6 @@ const Home = () => {
       fetchWorkouts();
     }
   }, [dispatch, user]);
-
-  const [loading, setLoading] = useState(true);
-
-  if (loading) {
-    setTimeout(() => {
-      setLoading(false);
-    }, 5000);
-  }
 
   return (
     <>

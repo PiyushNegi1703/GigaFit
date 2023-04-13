@@ -11,7 +11,7 @@ const LandingPage = () => {
   if (loading) {
     setTimeout(() => {
       setLoading(false);
-    }, 5000);
+    }, 500);
   }
 
   return (

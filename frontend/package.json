@@ -7,17 +7,14 @@
     "@emotion/styled": "^11.10.6",
     "@mui/lab": "^5.0.0-alpha.125",
     "@mui/material": "^5.11.10",
-    "@uiw/react-heat-map": "^2.0.5",
-    "calendar-graph": "^1.0.1",
+    "framer-motion": "^10.11.6",
     "react": "^18.2.0",
-    "react-calendar-heatmap": "^1.9.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.7.1",
     "react-parallax-tilt": "^1.7.106",
     "react-router-dom": "^6.8.1",
     "react-scripts": "5.0.1",
-    "react-spinners": "^0.13.8",
-    "reactstrap": "^9.1.8"
+    "react-spinners": "^0.13.8"
   },
   "scripts": {
     "start": "react-scripts start",
