@@ -6,6 +6,14 @@ const express = require("express");
 // Importing cors
 const cors = require("cors");
 
+// Express App
+const app = express();
+
+// Using Cors
+app.use(cors({
+  origin: ["http://localhost:3000", "https://gigafit.pages.dev", "https://gigafit-q2q0.onrender.com"]
+}));
+
 // Importing routes
 const workoutRoutes = require("./routes/workout");
 const userRoutes = require("./routes/user");
@@ -14,16 +22,8 @@ const fullBody = require('./routes/fullBodyWorkout')
 // Importing mongoose
 const mongoose = require("mongoose");
 
-// Express App
-const app = express();
-
 // Creating a default port
 const port = process.env.PORT || 900;
-
-// Using Cors
-app.use(cors({
-  origin: ["http://localhost:3000", "https://gigafit.pages.dev", "https://gigafit-q2q0.onrender.com"]
-}));
 
 // app.use(cors())
 
