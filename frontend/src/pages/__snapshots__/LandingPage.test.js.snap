@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should match snapshot 1`] = `
+<div
+  className="landing-page"
+  data-testid="land"
+>
+  <div
+    className="image-container"
+  >
+    <img
+      alt="bg img"
+      className="background-image"
+      src="login 1.png"
+    />
+    <div
+      className="logo-container"
+    >
+      <img
+        alt="logo"
+        src="logo.png"
+      />
+    </div>
+    <div
+      className="text-container"
+    >
+      <p
+        data-testid="text"
+      >
+        Transform your Body, Mind and Soul with 
+        <br />
+         GIGAFIT
+      </p>
+    </div>
+    <div
+      className="button-container"
+    >
+      <a
+        href="/login"
+        onClick={[Function]}
+      >
+        <button
+          className="button"
+          data-testid="button-text"
+        >
+          Get Started
+        </button>
+      </a>
+    </div>
+  </div>
+</div>
+`;
