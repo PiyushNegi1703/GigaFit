@@ -2,15 +2,36 @@ import { useAuthContext } from "../hooks/useAuthContext";
 import "./Profile.css";
 import bgImg from "../assets/login 2.png";
 import Navbar from "../components/Navbar";
-import { useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import { useUserWorkoutContext } from "../hooks/useUserWorkoutContext";
+import UserWorkoutDetails from "../components/UserWorkoutDetails";
+import WorkoutModal from "../components/WorkoutModal";
 
 const Profile = () => {
-  const count = useRef(0);
-  const [items, setItems] = useState([]);
-  // const [popLayout, setPopLayout] = useState(false);
+  const { workouts, dispatch } = useUserWorkoutContext();
   const { user } = useAuthContext();
-  // const [workout, setWorkout] = useState("");
+  const [modalOpen, setModalOpen] = useState(false);
+
+  useEffect(() => {
+    const fetchWorkouts = async () => {
+      const response = await fetch(`${process.env.REACT_APP_API}/userWorkouts`, {
+        headers: {
+          'Authorization': `Bearer ${user.token}`
+        }
+      })
+
+      const json = await response.json()
+
+      if(response.ok) {
+        dispatch({type: 'SET_WORKOUTS', payload: json})
+      }
+    }
+
+    if(user) {
+      fetchWorkouts()
+    }
+  }, [dispatch, user])
 
   return (
     <div style={{ width: "100%" }}>
@@ -37,37 +58,22 @@ const Profile = () => {
 
           <div className="Tracker">
             <div className="input-container">
-              <input type="text" />
-            <motion.button
-              whileTap={{ scale: 0.95 }}
-              onClick={() => {
-                count.current++;
-                setItems([...items, count.current]);
-              }}
-              >
-              Add item
-            </motion.button>
-              </div>
+                <motion.button style={{marginTop: "3vh"}} className="modal-button" whileTap={{ scale: 0.95 }} onClick={() => setModalOpen(true)}>
+                  Add Workout
+                </motion.button>
+            </div>
 
-            <ul>
-        <AnimatePresence>
-          {items.map((id) => (
-            <motion.li
-              layout
-              initial={{ scale: 0.8, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.8, opacity: 0 }}
-              transition={{ type: "spring" }}
-              key={id}
-              onClick={() => {
-                const newItems = [...items];
-                setItems(newItems);
-              }}
-            >Hello</motion.li>
-          ))}
-        </AnimatePresence>
-      </ul>
+            {/* <ul> */}
+            <div className="motion-div-container">
+              <AnimatePresence>
+                {workouts && workouts.map((e, i) => (
+                  <UserWorkoutDetails workout={e} key={i} />
+                ))}
+              </AnimatePresence>
+            </div>
+            {/* </ul> */}
           </div>
+          <WorkoutModal type='add' modalOpen={modalOpen} setModalOpen={setModalOpen} />
         </div>
       </div>
     </div>

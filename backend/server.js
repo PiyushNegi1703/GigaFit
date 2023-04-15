@@ -18,6 +18,7 @@ app.use(cors({
 const workoutRoutes = require("./routes/workout");
 const userRoutes = require("./routes/user");
 const fullBody = require('./routes/fullBodyWorkout')
+const userWorkouts = require('./routes/userWorkouts')
 
 // Importing mongoose
 const mongoose = require("mongoose");
@@ -31,7 +32,6 @@ const port = process.env.PORT || 900;
 app.use(express.json());
 
 app.use((req, resp, next) => {
-  console.log(req.path, req.method);
   next();
 });
 
@@ -39,6 +39,7 @@ app.use((req, resp, next) => {
 app.use("/api/workouts", workoutRoutes);
 app.use("/api/user", userRoutes);
 app.use("/api/fullBody", fullBody);
+app.use("/api/userWorkouts", userWorkouts);
 
 // Setting strictQuery to false to prevent error
 mongoose.set("strictQuery", false);

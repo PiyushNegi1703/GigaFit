@@ -80,7 +80,7 @@ const Navbar = () => {
             </Menu>
           </>
         ) : (
-          <button onClick={logoutHandle}>Logout</button>
+          <button onClick={logoutHandle} className="logout-button">Logout</button>
         )}
       </div>
     </nav>
