@@ -27,19 +27,15 @@ const TestPage = () => {
       } else {
         setWorkouts({})
       }
+      if(response.ok) {
+        setLoading(false)
+      }
     }
 
     if(user) {
       fetchWorkout()
     }
   }, [location.state.id, location.state.workoutType, user])
-
-
-  if (loading) {
-    setTimeout(() => {
-      setLoading(false);
-    }, 5000);
-  }
 
   return (
     <>
