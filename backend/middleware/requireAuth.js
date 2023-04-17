@@ -3,13 +3,13 @@ const User = require("../models/userModel");
 
 const requireAuth = async (req, resp, next) => {
   // Verifying user authencation
-  const { authorisation } = req.headers;
+  const { authorization } = req.headers;
 
-  if (!authorisation) {
+  if (!authorization) {
     return resp.status(401).json({ error: "Authorisation token required" });
   }
 
-  const token = authorisation.split(" ")[1];
+  const token = authorization.split(" ")[1];
 
   try {
     const { _id } = jwt.verify(token, process.env.SECRET);
