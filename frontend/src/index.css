@@ -545,6 +545,23 @@ input.error {
   width: 15vh;
 }
 
+/*>>>>>>>>>>>>>>>>>>>>>>>>>>> TERMS & CONDITIONS PAGE <<<<<<<<<<<<<<<<<<<<<<<*/
+.terms-wrapper {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.terms-container {
+  display: flex;
+  flex-direction: column;
+  gap: 5vh;
+  width: 70%;
+}
+
+
 /*>>>>>>>>>>>>>>>>>>>>>>>>>>> RESPONSIVE <<<<<<<<<<<<<<<<<<<<<<<*/
 @media screen and (max-width: 600px) {
 
