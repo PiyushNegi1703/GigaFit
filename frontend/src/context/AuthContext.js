@@ -22,7 +22,7 @@ export const AuthContextProvider = ({ children }) => {
     const user = JSON.parse(sessionStorage.getItem('user'))
 
     if (user) {
-      dispatch({ type: 'LOGIN', payload: user }) 
+      dispatch({ type: 'LOGIN', payload: user })
     }
   }, [])
   
