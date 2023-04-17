@@ -11,6 +11,7 @@ import SuggestedPage from "./workoutPages/SuggestedPage";
 import Googleauth from "./pages/Googleauth";
 import Profile from "./pages/Profile";
 import WeekPage from "./pages/WeekPage";
+import TermsAndConditions from "./pages/TermsAndConditions";
 // import DemoProfile from "./pages/DemoProfile";
 
 function App() {
@@ -44,6 +45,7 @@ function App() {
           path="/suggested"
           element={user ? <SuggestedPage /> : <Navigate to="/login" />}
         />
+        <Route path="/terms" element={<TermsAndConditions />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/week" element={<WeekPage />} />
         <Route path="/googleauth" element={<Googleauth />} />
