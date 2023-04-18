@@ -1,6 +1,7 @@
 import { useAuthContext } from "../hooks/useAuthContext";
 import "./Profile.css";
 import bgImg from "../assets/login 2.png";
+import start from "../assets/2535489_368756-PB2XF5-477-removebg-preview.png";
 import Navbar from "../components/Navbar";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
@@ -62,16 +63,18 @@ const Profile = () => {
                   Add Workout
                 </motion.button>
             </div>
-
-            {/* <ul> */}
+            {workouts && workouts.length > 0 ?
             <div className="motion-div-container">
               <AnimatePresence>
                 {workouts && workouts.map((e, i) => (
                   <UserWorkoutDetails workout={e} key={i} />
-                ))}
+                  ))}
               </AnimatePresence>
+            </div> :
+            <div style={{display: "flex", alignItems: "center", justifyContent: "center"}}>
+              <img src={start} alt="" style={{filter: "hue-rotate(295deg) saturate(4)", maxWidth: "350px"}} />
             </div>
-            {/* </ul> */}
+                }
           </div>
           <WorkoutModal type='add' modalOpen={modalOpen} setModalOpen={setModalOpen} />
         </div>
