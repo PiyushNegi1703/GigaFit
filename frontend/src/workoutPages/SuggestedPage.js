@@ -10,6 +10,7 @@ import { useLocation } from "react-router-dom";
 const TestPage = () => {
   const [loading, setLoading] = useState(true);
   const [workouts, setWorkouts] = useState([]);
+  const [day, setDay] = useState("");
   const location = useLocation()
   const { user } = useAuthContext();
 
@@ -18,78 +19,102 @@ const TestPage = () => {
       const response = await fetch(`${process.env.REACT_APP_API}/fullBody`)
       const json = await response.json();
       const data = await json[0]
-      console.log(data)
+
       if(location.state.id === "11") {
         setWorkouts(data.week1.day1)
+        setDay("Week 1 Day 1")
       }
       else if (location.state.id === "12") {
         setWorkouts(data.week1.day2)
+        setDay("Week 1 Day 2")
       }
       else if (location.state.id === "14") {
         setWorkouts(data.week1.day3)
+        setDay("Week 1 Day 3")
       }
       else if (location.state.id === "15") {
         setWorkouts(data.week1.day4)
+        setDay("Week 1 Day 4")
       }
       else if (location.state.id === "21") {
         setWorkouts(data.week2.day1)
+        setDay("Week 2 Day 1")
       }
       else if (location.state.id === "22") {
         setWorkouts(data.week2.day2)
+        setDay("Week 2 Day 2")
       }
       else if (location.state.id === "24") {
         setWorkouts(data.week2.day3)
+        setDay("Week 2 Day 3")
       }
       else if (location.state.id === "25") {
         setWorkouts(data.week2.day4)
+        setDay("Week 2 Day 4")
       }
       else if (location.state.id === "31") {
         setWorkouts(data.week3.day1)
+        setDay("Week 3 Day 1")
       }
       else if (location.state.id === "32") {
         setWorkouts(data.week3.day2)
+        setDay("Week 3 Day 2")
       }
       else if (location.state.id === "34") {
         setWorkouts(data.week3.day3)
+        setDay("Week 3 Day 3")
       }
       else if (location.state.id === "35") {
         setWorkouts(data.week3.day4)
+        setDay("Week 3 Day 4")
       }
       else if (location.state.id === "41") {
         setWorkouts(data.week4.day1)
+        setDay("Week 4 Day 1")
       }
       else if (location.state.id === "42") {
         setWorkouts(data.week4.day2)
+        setDay("Week 4 Day 2")
       }
       else if (location.state.id === "44") {
         setWorkouts(data.week4.day3)
+        setDay("Week 4 Day 3")
       }
       else if (location.state.id === "45") {
         setWorkouts(data.week4.day4)
+        setDay("Week 4 Day 4")
       }
       else if (location.state.id === "51") {
         setWorkouts(data.week5.day1)
+        setDay("Week 5 Day 1")
       }
       else if (location.state.id === "52") {
         setWorkouts(data.week5.day2)
+        setDay("Week 5 Day 2")
       }
       else if (location.state.id === "54") {
         setWorkouts(data.week5.day3)
+        setDay("Week 5 Day 3")
       }
       else if (location.state.id === "55") {
         setWorkouts(data.week5.day4)
+        setDay("Week 5 Day 4")
       }
       else if (location.state.id === "61") {
         setWorkouts(data.week6.day1)
+        setDay("Week 6 Day 1")
       }
       else if (location.state.id === "62") {
         setWorkouts(data.week6.day2)
+        setDay("Week 6 Day 2")
       }
       else if (location.state.id === "64") {
         setWorkouts(data.week6.day3)
+        setDay("Week 6 Day 3")
       }
       else if (location.state.id === "65") {
         setWorkouts(data.week6.day4)
+        setDay("Week 6 Day 4")
       }
       else {
         setWorkouts({})
@@ -121,7 +146,7 @@ const TestPage = () => {
                 alt="background"
               />
 
-              <h1>{workouts.title}</h1>
+              <h1>{day}</h1>
             </div>
 
             <div className="exercise-wrapper">
