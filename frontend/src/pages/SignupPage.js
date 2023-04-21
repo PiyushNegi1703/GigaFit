@@ -11,7 +11,7 @@ const SignupPage = () => {
   const [loading, setLoading] = useState(true);
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
-  const[buttonLoader,setButtonLoader] = useState(false)
+  const [buttonLoader,setButtonLoader] = useState(false)
   const [password, setPassword] = useState("");
   // Taking constants from useSignup
   const { signup, error, isLoading } = useSignup();
