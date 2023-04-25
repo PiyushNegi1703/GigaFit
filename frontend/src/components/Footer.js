@@ -1,6 +1,7 @@
 import footerImg from "../assets/nav-logo desk.png";
 import { AiFillGithub } from "react-icons/ai";
 import { AiFillLinkedin } from "react-icons/ai";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -19,6 +20,7 @@ const Footer = () => {
         <div style={{width: "50%"}}>
           <img src={footerImg} alt="" />
         </div>
+        <Link to='/terms'><p>Terms & Conditions</p></Link>
         {/* <div> */}
         <h3 style={{ fontSize: "1.1em" }}>
           Social Media -{" "}

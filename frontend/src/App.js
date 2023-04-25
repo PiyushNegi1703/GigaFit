@@ -12,6 +12,7 @@ import Googleauth from "./pages/Googleauth";
 import Profile from "./pages/Profile";
 import WeekPage from "./pages/WeekPage";
 import TermsAndConditions from "./pages/TermsAndConditions";
+import NotFound from "./pages/NotFound";
 // import DemoProfile from "./pages/DemoProfile";
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path="*" element={<NotFound />} />
         <Route path="/" element={<LandingPage />} />
         <Route
           path="/login"
