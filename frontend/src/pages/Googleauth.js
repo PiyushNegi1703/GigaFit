@@ -22,7 +22,6 @@ const Googleauth = () => {
   });
 
   async function handleCredentialResponse(response) {
-    console.log(response.credential)
     setLoading(true)
     
     const fetchdata = await fetch(`${process.env.REACT_APP_API}/user/googleauth`, {
@@ -35,8 +34,6 @@ const Googleauth = () => {
       }),
     });
     const jsondata = await fetchdata.json();
-    // console.log(jsondata);
-    console.log(jsondata)
     sessionStorage.setItem('user', JSON.stringify(jsondata))
 
     // Update the Auth Context

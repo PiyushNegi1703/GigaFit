@@ -73,7 +73,6 @@ const googleAuth = async (req, res) => {
     const updtUser = await User.findByIdAndUpdate({_id : _id}, {pic: user.picture}, {new: true})
     const token = createToken(userexist._id);
     const { pic } = updtUser;
-    console.log(pic);
     res.json({ username, email, token, pic });
   } else {
     const newuser = await new User({
@@ -86,7 +85,6 @@ const googleAuth = async (req, res) => {
     await newuser.save();
     
     const googleuser = await User.findOne({ email: user.email });
-    console.log(googleuser.pic)
     
     const { _id, username, email, pic } = googleuser;
     const token = createToken(googleuser._id);
